@@ -1,0 +1,4097 @@
+[
+ {
+   "source": "America's Promise Ministry",
+   "target": "Dave Barley",
+   "id": 0,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "American Agricultural Movement",
+   "target": "Posse Comitatus",
+   "id": 1,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Texas Light Infantry Brigade (TLIB)",
+   "id": 2,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Elohim City",
+   "id": 3,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Timothy McVeigh",
+   "id": 4,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Waco Siege",
+   "id": 5,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 6,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "Racketeering Conspiracy",
+   "id": 7,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "The Order",
+   "id": 8,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 9,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Racketeering Conspiracy",
+   "id": 10,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "The Order",
+   "id": 11,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 12,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Posse Comitatus",
+   "id": 13,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Fort Smith sedition trial",
+   "id": 14,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Arizona Patriots",
+   "target": "Committee of the States",
+   "id": 15,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Arizona Patriots",
+   "target": "1986 Armored car bombing plot",
+   "id": 16,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Aryan Nations",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 17,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Aryan Nations",
+   "target": "Committee of the States",
+   "id": 18,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Aryan Republican Army (ARA)",
+   "target": "Vigilantes of Christiandom",
+   "id": 19,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Aryan Republican Army (ARA)",
+   "target": "1990s Bank Robberies",
+   "id": 20,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Aryan Republican Army (ARA)",
+   "target": "Turner Diaries",
+   "id": 21,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Benny Waldrup",
+   "target": "Swift Underground",
+   "id": 22,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Benny Waldrup",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 23,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Bertrand Comparet",
+   "target": "California Anti-Communist League",
+   "id": 24,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Bertrand Comparet",
+   "target": "Gerald L.K. Smith",
+   "id": 25,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Bertrand Comparet",
+   "target": "Christian Defense League",
+   "id": 26,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Bill Holt",
+   "target": "Eastview Klavern 13",
+   "id": 27,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Bill Holt",
+   "target": "Wesley Swift",
+   "id": 28,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Hallstrom",
+   "target": "America's Promise Ministry",
+   "id": 29,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Hallstrom",
+   "target": "Aryan Nations",
+   "id": 30,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Tommy Tarrants",
+   "id": 31,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Wesley Swift",
+   "id": 32,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "John Crommelin",
+   "id": 33,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Sidney Crockett Barnes",
+   "id": 34,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 35,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bobby Cherry",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 36,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Bobby Cherry",
+   "target": "Eastview Klavern 13",
+   "id": 37,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Brian J. Ratigan",
+   "target": "1996 Spokane Bombings",
+   "id": 38,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Brian J. Ratigan",
+   "target": "Phineas Priesthood",
+   "id": 39,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "British Israelism",
+   "target": "Gerald L.K. Smith",
+   "id": 40,
+   "weight": 3,
+   "decade": 1920
+ },
+ {
+   "source": "British Israelism",
+   "target": "William J. Cameron",
+   "id": 41,
+   "weight": 3,
+   "decade": 1920
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "The Order",
+   "id": 42,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Murder of Alan Berg",
+   "id": 43,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Fort Smith sedition trial",
+   "id": 44,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Racketeering Conspiracy",
+   "id": 45,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Aryan Nations",
+   "id": 46,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 47,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "National Emancipation of our White Seed",
+   "id": 48,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Dan Gayman",
+   "id": 49,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Gerald L.K. Smith",
+   "id": 50,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Richard Girnt Butler",
+   "id": 51,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Byron de la Beckwith",
+   "id": 52,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "North Valley Jewish Community Center Shooting",
+   "id": 53,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "Aryan Nations",
+   "id": 54,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "Richard Kelly Hoskins",
+   "id": 55,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "America's Promise Ministry",
+   "id": 56,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "White Citizens Council",
+   "id": 57,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Phineas Priesthood",
+   "id": 58,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Murder of Medgar Evers",
+   "id": 59,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Sam Bowers",
+   "id": 60,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "J.B. Stoner",
+   "id": 61,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Scott Shepherd",
+   "id": 62,
+   "weight": 5,
+   "decade": 2000
+ },
+ {
+   "source": "California Knights of the KKK",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 63,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "California Rangers",
+   "target": "Minutemen",
+   "id": 64,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "1996 Spokane Bank Robbery",
+   "id": 65,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "1996 Spokane Abortion Clinic Bombing",
+   "id": 66,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "1996 Spokane Newspaper Bombing",
+   "id": 67,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "Phineas Priesthood",
+   "id": 68,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Elohim City",
+   "id": 69,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Andreas Strassmeir",
+   "id": 70,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Timothy McVeigh",
+   "id": 71,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 72,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Mueller Family Murders",
+   "id": 73,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Aryan Peoples Republic",
+   "id": 74,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Michael Brescia",
+   "id": 75,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Christian Patriots Defense League",
+   "target": "William Potter Gale",
+   "id": 76,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Christian Patriots Defense League",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 77,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 78,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "J.B. Stoner",
+   "id": 79,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "Minutemen",
+   "id": 80,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "Sam Bowers",
+   "id": 81,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Conrad Gaard",
+   "target": "Christian Nationalist Crusade",
+   "id": 82,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Church of Israel",
+   "id": 83,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Aryan Nations",
+   "id": 84,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Jack Mohr",
+   "id": 85,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "John Harrell",
+   "id": 86,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 87,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "The Order",
+   "id": 88,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Thomas Robb",
+   "id": 89,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Daniel Bauer",
+   "target": "Aryan Nations",
+   "id": 90,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Daniel Bauer",
+   "target": "The Order",
+   "id": 91,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Daniel Bauer",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 92,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Daniel Mahon",
+   "target": "Scottsdale Office of Diversity mail bombing",
+   "id": 93,
+   "weight": 5,
+   "decade": 2000
+ },
+ {
+   "source": "Daniel Mahon",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 94,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Danny Lee",
+   "target": "Elohim City",
+   "id": 95,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Danny Lee",
+   "target": "Aryan Peoples Republic",
+   "id": 96,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Dave Barley",
+   "target": "Sheldon Emry",
+   "id": 97,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Dave Barley",
+   "target": "Jay Merrell",
+   "id": 98,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "David Andreas",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 99,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Andreas",
+   "target": "Posse Comitatus",
+   "id": 100,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Andreas",
+   "target": "American Agricultural Movement",
+   "id": 101,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "David Andreas",
+   "target": "Michael Wayne Ryan",
+   "id": 102,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Duke",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 103,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "David Duke",
+   "target": "Tom Metzger",
+   "id": 104,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "David Duke",
+   "target": "Thomas Robb",
+   "id": 105,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "David Duke",
+   "target": "Populist Party",
+   "id": 106,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "David Duke",
+   "target": "New Christian Crusade Church",
+   "id": 107,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "David John Moran",
+   "target": "Committee of the States",
+   "id": 108,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "David John Moran",
+   "target": "1986 armed robberies",
+   "id": 109,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "The Order",
+   "id": 110,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Murder of Alan Berg",
+   "id": 111,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Fort Smith sedition trial",
+   "id": 112,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Church of LaPorte",
+   "id": 113,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Robert Mathews",
+   "id": 114,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Zillah Craig",
+   "id": 115,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Racketeering Conspiracy",
+   "id": 116,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "The Order",
+   "id": 117,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "Murder of Missouri State Trooper",
+   "id": 118,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "Church of Israel",
+   "id": 119,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "Aryan Nations",
+   "id": 120,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "David Trochmann",
+   "target": "Militia of Montana",
+   "id": 121,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Debbi Mathews",
+   "target": "Robert Mathews",
+   "id": 122,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Debbi Mathews",
+   "target": "Buford Oneal Furrow",
+   "id": 123,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Scottsdale Office of Diversity mail bombing",
+   "id": 124,
+   "weight": 5,
+   "decade": 2000
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Daniel Mahon",
+   "id": 125,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 126,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Elohim City",
+   "id": 127,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Tom Metzger",
+   "id": 128,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Waco Siege",
+   "id": 129,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Turner Diaries",
+   "id": 130,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 131,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Dennis Mower",
+   "target": "Minutemen",
+   "id": 132,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Dennis Mower",
+   "target": "Wesley Swift",
+   "id": 133,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Dennis Ryan",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 134,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Dennis Ryan",
+   "target": "Posse Comitatus",
+   "id": 135,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Dennis Ryan",
+   "target": "Michael Wayne Ryan",
+   "id": 136,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Eastview Klavern 13",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 137,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Ed Fields",
+   "target": "National States Rights Party",
+   "id": 138,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "Ed Fields",
+   "target": "J.B. Stoner",
+   "id": 139,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "Ed Fields",
+   "target": "Wesley Swift",
+   "id": 140,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "Ed Fields",
+   "target": "New Order Knights of the KKK",
+   "id": 141,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Elohim City",
+   "target": "Scott Stedeford",
+   "id": 142,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Emory Burke",
+   "target": "National States Rights Party",
+   "id": 143,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Emory Burke",
+   "target": "Christian Nationalist Crusade",
+   "id": 144,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Eric Rudolph",
+   "target": "Nord Davis",
+   "id": 145,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Eric Rudolph",
+   "target": "Church of Israel",
+   "id": 146,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Eric Rudolph",
+   "target": "Olympic Park & 3 Other Bombings",
+   "id": 147,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Faron Lovelace",
+   "target": "Elohim City",
+   "id": 148,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Faron Lovelace",
+   "target": "Aryan Peoples Republic",
+   "id": 149,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Father Charles Coughlin",
+   "target": "Gerald L.K. Smith",
+   "id": 150,
+   "weight": 1,
+   "decade": 1920
+ },
+ {
+   "source": "Father Charles Coughlin",
+   "target": "Union Party",
+   "id": 151,
+   "weight": 3,
+   "decade": 1930
+ },
+ {
+   "source": "Father Charles Coughlin",
+   "target": "Protocols of the Elders of Zion",
+   "id": 152,
+   "weight": 4,
+   "decade": 1930
+ },
+ {
+   "source": "Frank Silva",
+   "target": "Racketeering Conspiracy",
+   "id": 153,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Frank Silva",
+   "target": "The Order",
+   "id": 154,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "The Order",
+   "id": 155,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "Racketeering Conspiracy",
+   "id": 156,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "Murder of Alan Berg",
+   "id": 157,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "Aryan Nations",
+   "id": 158,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 159,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "George Joseph King Jr",
+   "target": "California Rangers",
+   "id": 160,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "George Joseph King Jr",
+   "target": "William Potter Gale",
+   "id": 161,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "George Joseph King Jr",
+   "target": "1963 Illegal Arms Sales",
+   "id": 162,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Union Party",
+   "id": 163,
+   "weight": 3,
+   "decade": 1930
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Christian Nationalist Crusade",
+   "id": 164,
+   "weight": 5,
+   "decade": 1940
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Conrad Gaard",
+   "id": 165,
+   "weight": 2,
+   "decade": 1940
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Wesley Swift",
+   "id": 166,
+   "weight": 3,
+   "decade": 1940
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 167,
+   "weight": 1,
+   "decade": 1920
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Silver Shirts",
+   "id": 168,
+   "weight": 3,
+   "decade": 1930
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Posse Comitatus",
+   "id": 169,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Richard Wayne Snell",
+   "id": 170,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Neuman Britton",
+   "id": 171,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 172,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "1983 Shootout with FBI",
+   "id": 173,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Henry Ford",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 174,
+   "weight": 5,
+   "decade": 1920
+ },
+ {
+   "source": "Howard Rand",
+   "target": "British Israelism",
+   "id": 175,
+   "weight": 5,
+   "decade": 1920
+ },
+ {
+   "source": "Howard Rand",
+   "target": "Anglo-Saxon Federation of America",
+   "id": 176,
+   "weight": 5,
+   "decade": 1930
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Eastview Klavern 13",
+   "id": 177,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "National States Rights Party",
+   "id": 178,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Tennessee KKK",
+   "id": 179,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Bethel Baptist Church Bombing",
+   "id": 180,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Confederate Underground",
+   "id": 181,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 182,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Sam Bowers",
+   "id": 183,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Jack Brown",
+   "target": "J.B. Stoner",
+   "id": 184,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Jack Brown",
+   "target": "Eastview Klavern 13",
+   "id": 185,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Jack Brown",
+   "target": "Wesley Swift",
+   "id": 186,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Jack Mohr",
+   "target": "Christian Patriots Defense League",
+   "id": 187,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Jack Mohr",
+   "target": "Scriptures for America",
+   "id": 188,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "David Duke",
+   "id": 189,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Scriptures for America",
+   "id": 190,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Populist Party",
+   "id": 191,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Church of Israel",
+   "id": 192,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Dan Gayman",
+   "id": 193,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 194,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "James Forester",
+   "target": "Unity Now",
+   "id": 195,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "James Forester",
+   "target": "Ministry of Christ Church",
+   "id": 196,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "James Haverkamp",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 197,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "James Haverkamp",
+   "target": "Posse Comitatus",
+   "id": 198,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James Haverkamp",
+   "target": "Michael Wayne Ryan",
+   "id": 199,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Christian Defense League",
+   "id": 200,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "National States Rights Party",
+   "id": 201,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James K. Warner",
+   "target": "New Christian Crusade Church",
+   "id": 202,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "David Duke",
+   "id": 203,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Ed Fields",
+   "id": 204,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "J.B. Stoner",
+   "id": 205,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Wesley Swift",
+   "id": 206,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 207,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Louis Beam",
+   "id": 208,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Scriptures for America",
+   "id": 209,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "Wesley Swift",
+   "id": 210,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "National States Rights Party",
+   "id": 211,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "California Rangers",
+   "id": 212,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 213,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "James Thimm",
+   "target": "Posse Comitatus",
+   "id": 214,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James Thimm",
+   "target": "Michael Wayne Ryan",
+   "id": 215,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James Venable",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 216,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 217,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "California Knights of the KKK",
+   "id": 218,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "J.B. Stoner",
+   "id": 219,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "Confederate Underground",
+   "id": 220,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "James Venable",
+   "target": "Wesley Swift",
+   "id": 221,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Posse Comitatus",
+   "id": 222,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Aryan Nations",
+   "id": 223,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Dan Gayman",
+   "id": 224,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Church of Israel",
+   "id": 225,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "American Agricultural Movement",
+   "id": 226,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "America's Promise Ministry",
+   "id": 227,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "1996 Spokane Bank Robbery",
+   "id": 228,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "1996 Spokane Abortion Clinic Bombing",
+   "id": 229,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "1996 Spokane Newspaper Bombing",
+   "id": 230,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "Phineas Priesthood",
+   "id": 231,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Jean Craig",
+   "target": "Racketeering Conspiracy",
+   "id": 232,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Jean Craig",
+   "target": "Zillah Craig",
+   "id": 233,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Robert G. Millar",
+   "id": 234,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Dan Gayman",
+   "id": 235,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 236,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Richard Wayne Snell",
+   "id": 237,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Fort Smith sedition trial",
+   "id": 238,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Elohim City",
+   "id": 239,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Joe Daniel (Danny Joe) Hawkins",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 240,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Joe Daniel (Danny Joe) Hawkins",
+   "target": "Swift Underground",
+   "id": 241,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Joe Daniel (Danny Joe) Hawkins",
+   "target": "National States Rights Party",
+   "id": 242,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "John Crommelin",
+   "target": "National States Rights Party",
+   "id": 243,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "Wesley Swift",
+   "id": 244,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "J.B. Stoner",
+   "id": 245,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 246,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "Sidney Crockett Barnes",
+   "id": 247,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 248,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "John Harrell",
+   "target": "Christian Patriots Defense League",
+   "id": 249,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "John Kasper",
+   "target": "Wesley Swift",
+   "id": 250,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "John Kasper",
+   "target": "J.B. Stoner",
+   "id": 251,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "John Kasper",
+   "target": "National States Rights Party",
+   "id": 252,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "John Kasper",
+   "target": "Tennessee KKK",
+   "id": 253,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "John Shults",
+   "target": "Elohim City",
+   "id": 254,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "John Shults",
+   "target": "Chevie Kehoe",
+   "id": 255,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Shults",
+   "target": "Andreas Strassmeir",
+   "id": 256,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Shults",
+   "target": "Timothy McVeigh",
+   "id": 257,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Militia of Montana",
+   "id": 258,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Aryan Nations",
+   "id": 259,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Randy Weaver",
+   "id": 260,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Ruby Ridge",
+   "id": 261,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "David Trochmann",
+   "id": 262,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 263,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "National States Rights Party",
+   "id": 264,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "James Venable",
+   "id": 265,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "Wesley Swift",
+   "id": 266,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 267,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Sam Bowers",
+   "id": 268,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 269,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Sidney Crockett Barnes",
+   "id": 270,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Wesley Swift",
+   "id": 271,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Swift Underground",
+   "id": 272,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Tommy Tarrants",
+   "id": 273,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "Minutemen",
+   "id": 274,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 275,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "Wesley Swift",
+   "id": 276,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 277,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Ken Loff",
+   "target": "The Order",
+   "id": 278,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ken Loff",
+   "target": "Racketeering Conspiracy",
+   "id": 279,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Kenneth Goff",
+   "target": "Minutemen",
+   "id": 280,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Kenneth Goff",
+   "target": "Wesley Swift",
+   "id": 281,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 282,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Andreas Strassmeir",
+   "id": 283,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Michael Brescia",
+   "id": 284,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Elohim City",
+   "id": 285,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "1990s Bank Robberies",
+   "id": 286,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Mark Thomas",
+   "id": 287,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Kingdom Identity Ministries",
+   "target": "Mike Hallimore",
+   "id": 288,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Kingdom Identity Ministries",
+   "target": "Wesley Swift",
+   "id": 289,
+   "weight": 3,
+   "decade": 2000
+ },
+ {
+   "source": "Kingdom Identity Ministries",
+   "target": "Bertrand Comparet",
+   "id": 290,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Aryan Nations",
+   "id": 291,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "National Alliance",
+   "id": 292,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Institute for Historical Review",
+   "id": 293,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Richard Girnt Butler",
+   "id": 294,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Louis Beam",
+   "id": 295,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "James Wickstrom",
+   "id": 296,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 297,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "David Tate",
+   "id": 298,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 299,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "J.B. Stoner",
+   "id": 300,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "Sam Bowers",
+   "id": 301,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "Sidney Crockett Barnes",
+   "id": 302,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 303,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Larry Pratt",
+   "target": "Gun Owners of America",
+   "id": 304,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Pratt",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 305,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Steven McQuilliams",
+   "target": "Mexican Consulate Shooting Austin TX",
+   "id": 306,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Steven McQuilliams",
+   "target": "Richard Kelly Hoskins",
+   "id": 307,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Steven McQuilliams",
+   "target": "Phineas Priesthood",
+   "id": 308,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Leaderless Resistance",
+   "target": "Pete Peters",
+   "id": 309,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Louis Beam",
+   "target": "United Klans of America (UKA)",
+   "id": 310,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 311,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Fort Smith sedition trial",
+   "id": 312,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Texas Light Infantry Brigade (TLIB)",
+   "id": 313,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Leaderless Resistance",
+   "id": 314,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Aryan Nations",
+   "id": 315,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "America's Promise Ministry",
+   "id": 316,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 317,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Mark Thomas",
+   "target": "Aryan Nations",
+   "id": 318,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Mark Thomas",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 319,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Mark Thomas",
+   "target": "Richard \"Wild Bill\" Guthrie",
+   "id": 320,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 321,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Timothy McVeigh",
+   "id": 322,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Andreas Strassmeir",
+   "id": 323,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Elohim City",
+   "id": 324,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Fortier",
+   "target": "Oklahoma City Bombing",
+   "id": 325,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Wayne Ryan",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 326,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Michael Wayne Ryan",
+   "target": "Posse Comitatus",
+   "id": 327,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Michael Wayne Ryan",
+   "target": "James Wickstrom",
+   "id": 328,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Mike Beach",
+   "target": "Posse Comitatus",
+   "id": 329,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Mike Beach",
+   "target": "William Dudley Pelley",
+   "id": 330,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Mike Beach",
+   "target": "Silver Shirts",
+   "id": 331,
+   "weight": 3,
+   "decade": 1940
+ },
+ {
+   "source": "Mike Beach",
+   "target": "William Potter Gale",
+   "id": 332,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Mike Hallimore",
+   "target": "David Lane",
+   "id": 333,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Ministry of Christ Church",
+   "target": "Posse Comitatus",
+   "id": 334,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Ministry of Christ Church",
+   "target": "William Potter Gale",
+   "id": 335,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Minutemen",
+   "target": "National States Rights Party",
+   "id": 336,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Minutemen",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 337,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Minutemen",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 338,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Minutemen",
+   "target": "1968 firearms violations, bank robberies",
+   "id": 339,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Montana Freemen",
+   "target": "William Potter Gale",
+   "id": 340,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Montana Freemen",
+   "target": "James Wickstrom",
+   "id": 341,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Montana Freemen",
+   "target": "American Agricultural Movement",
+   "id": 342,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "National Alliance",
+   "target": "Turner Diaries",
+   "id": 344,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "National Knights of the KKK (NKKKK)",
+   "target": "National States Rights Party",
+   "id": 345,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "National States Rights Party",
+   "target": "New Order Knights of the KKK",
+   "id": 346,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 347,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "Wesley Swift",
+   "id": 348,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "James P. Thornton",
+   "id": 349,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "Aryan Nations",
+   "id": 350,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "National States Rights Party",
+   "id": 351,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Noah Jefferson (Jeff) Carden",
+   "target": "Wesley Swift",
+   "id": 352,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Noah Jefferson (Jeff) Carden",
+   "target": "White Citizens Council",
+   "id": 353,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Nord Davis",
+   "target": "Northpoint Tactical Teams Compound",
+   "id": 354,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Oren Potito",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 355,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Oren Potito",
+   "target": "National States Rights Party",
+   "id": 356,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Oren Potito",
+   "target": "Wesley Swift",
+   "id": 357,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Church of LaPorte",
+   "id": 358,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Jack Mohr",
+   "id": 359,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Scriptures for America",
+   "id": 360,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Ruby Ridge",
+   "id": 361,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Pete Peters",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 362,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 363,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "1990s Bank Robberies",
+   "id": 364,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "Robert Mathews",
+   "id": 365,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "Richard \"Wild Bill\" Guthrie",
+   "id": 366,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Phineas Priesthood",
+   "target": "Richard Kelly Hoskins",
+   "id": 367,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Phineas Priesthood",
+   "target": "Leaderless Resistance",
+   "id": 368,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Protocols of the Elders of Zion",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 370,
+   "weight": 2,
+   "decade": 1920
+ },
+ {
+   "source": "Protocols of the Elders of Zion",
+   "target": "William J. Cameron",
+   "id": 371,
+   "weight": 4,
+   "decade": 1920
+ },
+ {
+   "source": "Randall Evans",
+   "target": "Racketeering Conspiracy",
+   "id": 372,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Evans",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 373,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Evans",
+   "target": "Racketeering Conspiracy",
+   "id": 374,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Evans",
+   "target": "The Order",
+   "id": 375,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 376,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "Christian Patriots Defense League",
+   "id": 377,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "The Order",
+   "id": 378,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "Jim Ellison",
+   "id": 379,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "The Order",
+   "id": 380,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "Murder of Walter West",
+   "id": 381,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 382,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "Racketeering Conspiracy",
+   "id": 383,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "Aryan Nations",
+   "id": 384,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Randy Weaver",
+   "target": "Aryan Nations",
+   "id": 385,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 386,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Arkansas Knights of the KKK",
+   "id": 387,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Timothy McVeigh",
+   "id": 388,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Aryan Nations",
+   "id": 389,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "1990s Bank Robberies",
+   "id": 390,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Bertollini",
+   "target": "Aryan Nations",
+   "id": 391,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Bertollini",
+   "target": "America's Promise Ministry",
+   "id": 392,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Christian Defense League",
+   "id": 393,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 394,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Aryan Nations",
+   "id": 395,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Fort Smith sedition trial",
+   "id": 396,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Wesley Swift",
+   "id": 397,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Debbi Mathews",
+   "id": 398,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Buford Oneal Furrow",
+   "id": 399,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Posse Comitatus",
+   "id": 400,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "America's Promise Ministry",
+   "id": 401,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "National Emancipation of our White Seed",
+   "id": 402,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 403,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Committee of the States",
+   "id": 404,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kelly Hoskins",
+   "target": "Vigilantes of Christiandom",
+   "id": 405,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "Racketeering Conspiracy",
+   "id": 406,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "The Order",
+   "id": 407,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "Murder of Walter West",
+   "id": 408,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 409,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scott McIntosh",
+   "target": "Phineas Priesthood",
+   "id": 410,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Scott McIntosh",
+   "target": "1992 OK Bank Robberies",
+   "id": 411,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "The Order",
+   "id": 412,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Murder of Alan Berg",
+   "id": 413,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Fort Smith sedition trial",
+   "id": 414,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Racketeering Conspiracy",
+   "id": 415,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 416,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Robert G. Millar",
+   "id": 417,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 418,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Fort Smith sedition trial",
+   "id": 419,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Christian Patriots Defense League",
+   "id": 420,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Elohim City",
+   "id": 421,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "1983 Failed Pipeline Bomb Plot",
+   "id": 422,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Murder of Arkansas State Trooper, Texarkana Pawnshop Murder",
+   "id": 423,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Rick Stice",
+   "target": "Posse Comitatus",
+   "id": 424,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Rick Stice",
+   "target": "Michael Wayne Ryan",
+   "id": 425,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "Eastview Klavern 13",
+   "id": 426,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 427,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "Ed Fields",
+   "id": 428,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "J.B. Stoner",
+   "id": 429,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Robert Bolivar DePugh",
+   "target": "Minutemen",
+   "id": 430,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Robert Bolivar DePugh",
+   "target": "1968 firearms violations, bank robberies",
+   "id": 431,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Unity Now",
+   "id": 432,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Roy Frankhouser",
+   "id": 433,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Fort Smith sedition trial",
+   "id": 434,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Christian Patriots Defense League",
+   "id": 435,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "1971 School Bus bombings",
+   "id": 436,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert G. Millar",
+   "target": "Elohim City",
+   "id": 437,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert G. Millar",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 438,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "National Alliance",
+   "id": 439,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Aryan Nations",
+   "id": 440,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "The Order",
+   "id": 441,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Murder of Alan Berg",
+   "id": 442,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 443,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Turner Diaries",
+   "id": 444,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Zillah Craig",
+   "id": 445,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "Church of LaPorte",
+   "id": 446,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "The Order",
+   "id": 447,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "Racketeering Conspiracy",
+   "id": 448,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 449,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "1996 Spokane Bank Robbery",
+   "id": 450,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "1996 Spokane Abortion Clinic Bombing",
+   "id": 451,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "1996 Spokane Newspaper Bombing",
+   "id": 452,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "Phineas Priesthood",
+   "id": 453,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Roy Frankhouser",
+   "target": "Minutemen",
+   "id": 454,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Roy Frankhouser",
+   "target": "Wesley Swift",
+   "id": 455,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Roy Frankhouser",
+   "target": "Unity Now",
+   "id": 456,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Ruby Ridge",
+   "target": "James \"Bo\" Gritz",
+   "id": 457,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Ruby Ridge",
+   "target": "Randy Weaver",
+   "id": 458,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "S.J. Capt",
+   "target": "Christian Defense League",
+   "id": 459,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "S.J. Capt",
+   "target": "William Potter Gale",
+   "id": 460,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 461,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Tommy Tarrants",
+   "id": 462,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Wesley Swift",
+   "id": 463,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Congress of Freedom",
+   "id": 464,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 465,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "James Venable",
+   "id": 466,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Murder of Vernon Dahmer",
+   "id": 467,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Scott Shepherd",
+   "target": "Sam Bowers",
+   "id": 468,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Scott Shepherd",
+   "target": "J.B. Stoner",
+   "id": 469,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Scott Shepherd",
+   "target": "Tennessee KKK",
+   "id": 470,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Scott Stedeford",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 471,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Scott Stedeford",
+   "target": "1990s Bank Robberies",
+   "id": 472,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Scriptures for America",
+   "target": "Church of LaPorte",
+   "id": 473,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Sharon Merki",
+   "target": "The Order",
+   "id": 474,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Sharon Merki",
+   "target": "Racketeering Conspiracy",
+   "id": 475,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Sharon Merki",
+   "target": "Church of LaPorte",
+   "id": 476,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Shawn Kenny",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 477,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Sheldon Emry",
+   "target": "Lord's Covenant Church",
+   "id": 478,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sheldon Emry",
+   "target": "Howard Rand",
+   "id": 479,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Sheldon Emry",
+   "target": "America's Promise Ministry",
+   "id": 480,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 481,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "Wesley Swift",
+   "id": 482,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "National States Rights Party",
+   "id": 483,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 484,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 485,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Swift Underground",
+   "target": "Wesley Swift",
+   "id": 486,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Swift Underground",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 487,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Swift Underground",
+   "target": "Sam Bowers",
+   "id": 488,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Oklahoma City Bombing",
+   "id": 489,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Waco Siege",
+   "id": 490,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Michael Fortier",
+   "id": 491,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Elohim City",
+   "id": 492,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "The Order",
+   "target": "Murder of Alan Berg",
+   "id": 493,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "The Order",
+   "target": "Turner Diaries",
+   "id": 494,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Thomas Robb",
+   "target": "Arkansas Knights of the KKK",
+   "id": 495,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Thomas Robb",
+   "target": "Timothy McVeigh",
+   "id": 496,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Thomas Robb",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 497,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy Haverkamp",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 498,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy Haverkamp",
+   "target": "Posse Comitatus",
+   "id": 499,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy Haverkamp",
+   "target": "Michael Wayne Ryan",
+   "id": 500,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Terry L. Nichols",
+   "id": 501,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "William Luther Pierce",
+   "id": 502,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Civilian Military Resistance (CMA)",
+   "id": 503,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Oklahoma City Bombing",
+   "id": 504,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Ruby Ridge",
+   "id": 505,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Michael Fortier",
+   "id": 506,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Texas Light Infantry Brigade (TLIB)",
+   "id": 507,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "National Alliance",
+   "id": 508,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Arkansas Knights of the KKK",
+   "id": 509,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Waco Siege",
+   "id": 510,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Elohim City",
+   "id": 511,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 512,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "New Christian Crusade Church",
+   "id": 513,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "California Knights of the KKK",
+   "id": 514,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "Minutemen",
+   "id": 515,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Tommy Blanton",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 516,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Blanton",
+   "target": "Eastview Klavern 13",
+   "id": 517,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Blanton",
+   "target": "Ed Fields",
+   "id": 518,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "Wesley Swift",
+   "id": 519,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 520,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "Swift Underground",
+   "id": 521,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "Robert Bolivar DePugh",
+   "id": 522,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "L.E. Matthews",
+   "id": 523,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Turner Diaries",
+   "target": "Leaderless Resistance",
+   "id": 524,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "United Klans of America (UKA)",
+   "target": "Unity Now",
+   "id": 525,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "United Klans of America (UKA)",
+   "target": "Eastview Klavern 13",
+   "id": 526,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Vigilantes of Christiandom",
+   "target": "Phineas Priesthood",
+   "id": 527,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Vigilantes of Christiandom",
+   "target": "Leaderless Resistance",
+   "id": 528,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Robert Bolivar DePugh",
+   "id": 529,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Wesley Swift",
+   "id": 530,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Minutemen",
+   "id": 531,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 532,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Walter Eliyah Thody",
+   "target": "Phineas Priesthood",
+   "id": 533,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Walter Eliyah Thody",
+   "target": "1992 OK Bank Robberies",
+   "id": 534,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "California Anti-Communist League",
+   "id": 535,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 536,
+   "weight": 5,
+   "decade": 1940
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Christian Defense League",
+   "id": 537,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Christian Nationalist Crusade",
+   "id": 538,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "California Rangers",
+   "id": 539,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Congress of Freedom",
+   "id": 540,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "National States Rights Party",
+   "id": 541,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 542,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 543,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "Murder of Vernon Dahmer",
+   "id": 544,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Dudley Pelley",
+   "target": "Silver Shirts",
+   "id": 545,
+   "weight": 5,
+   "decade": 1930
+ },
+ {
+   "source": "William Dudley Pelley",
+   "target": "British Israelism",
+   "id": 546,
+   "weight": 2,
+   "decade": 1930
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 547,
+   "weight": 4,
+   "decade": 1920
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "Henry Ford",
+   "id": 548,
+   "weight": 5,
+   "decade": 1920
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "Anglo-Saxon Federation of America",
+   "id": 549,
+   "weight": 4,
+   "decade": 1930
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "The Covenant People",
+   "id": 550,
+   "weight": 5,
+   "decade": 1930
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "National Youth Alliance",
+   "id": 551,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "National States Rights Party",
+   "id": 552,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "Turner Diaries",
+   "id": 553,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "National Alliance",
+   "id": 554,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 555,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Wesley Swift",
+   "id": 556,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "James P. Thornton",
+   "id": 557,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "California Rangers",
+   "id": 558,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Posse Comitatus",
+   "id": 559,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Christian Defense League",
+   "id": 560,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Bob Smith",
+   "id": 561,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "John Crommelin",
+   "id": 562,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Sidney Crockett Barnes",
+   "id": 563,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 564,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Committee of the States",
+   "id": 565,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 566,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "1983 Beth Shalom Firebombing",
+   "id": 567,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "1983 Failed Pipeline Bomb Plot",
+   "id": 568,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Steven Scott",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 569,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Steven Scott",
+   "target": "1983 Failed Pipeline Bomb Plot",
+   "id": 570,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William V. Fowler",
+   "target": "California Knights of the KKK",
+   "id": 571,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "William V. Fowler",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 572,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "William V. Fowler",
+   "target": "Wesley Swift",
+   "id": 573,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Elohim City",
+   "id": 574,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Robert G. Millar",
+   "id": 575,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Dennis Mahon",
+   "id": 576,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Waco Siege",
+   "id": 577,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "November 1995 Bombing Plot",
+   "id": 578,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Willis Carto",
+   "target": "National Youth Alliance",
+   "id": 579,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Willis Carto",
+   "target": "Populist Party",
+   "id": 580,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Willis Carto",
+   "target": "James \"Bo\" Gritz",
+   "id": 581,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Willis Carto",
+   "target": "Institute for Historical Review",
+   "id": 582,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Zillah Craig",
+   "target": "Church of LaPorte",
+   "id": 583,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "1983 Beth Shalom Firebombing",
+   "id": 584,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "1983 Metropolitan Community Church Fire",
+   "id": 585,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "1983 Metropolitan Community Church Fire",
+   "id": 586,
+   "weight": 5,
+   "decade": 1980
+ }
+]

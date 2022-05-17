@@ -1,0 +1,6852 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+text {
+  font-family: sans-serif;
+  font-size: 10px;
+}
+
+</style>
+<svg width="1000" height="1000"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+//.force("collide", d3.forceCollide(20).iterations(10))
+//add to charge: .distanceMax(height/2).strength(-400)
+
+// d3.json("miserables.json", function(error, graph) {
+//   if (error) throw error;
+var graph = {
+    "nodes": [
+ {
+   "id": "America's Promise Ministry",
+   "label": "America's Promise Ministry",
+   "modularity_class": 6,
+   "eigencentrality": 0.135065,
+   "eccentricity": 7,
+   "closnesscentrality": 0.292079,
+   "harmonicclosnesscentrality": 0.328501,
+   "betweenesscentrality": 0.055886,
+   "degree": 8
+ },
+ {
+   "id": "Dave Barley",
+   "label": "Dave Barley",
+   "modularity_class": 6,
+   "eigencentrality": 0.032365,
+   "eccentricity": 8,
+   "closnesscentrality": 0.233432,
+   "harmonicclosnesscentrality": 0.256543,
+   "betweenesscentrality": 0.001423,
+   "degree": 3
+ },
+ {
+   "id": "American Agricultural Movement",
+   "label": "American Agricultural Movement",
+   "modularity_class": 8,
+   "eigencentrality": 0.078394,
+   "eccentricity": 7,
+   "closnesscentrality": 0.250531,
+   "harmonicclosnesscentrality": 0.279954,
+   "betweenesscentrality": 0.000663,
+   "degree": 4
+ },
+ {
+   "id": "Posse Comitatus",
+   "label": "Posse Comitatus",
+   "modularity_class": 8,
+   "eigencentrality": 0.266627,
+   "eccentricity": 6,
+   "closnesscentrality": 0.306096,
+   "harmonicclosnesscentrality": 0.359322,
+   "betweenesscentrality": 0.081209,
+   "degree": 15
+ },
+ {
+   "id": "Andreas Strassmeir",
+   "label": "Andreas Strassmeir",
+   "modularity_class": 1,
+   "eigencentrality": 0.160365,
+   "eccentricity": 8,
+   "closnesscentrality": 0.2423,
+   "harmonicclosnesscentrality": 0.286426,
+   "betweenesscentrality": 0.002773,
+   "degree": 8
+ },
+ {
+   "id": "Texas Light Infantry Brigade (TLIB)",
+   "label": "Texas Light Infantry Brigade (TLIB)",
+   "modularity_class": 6,
+   "eigencentrality": 0.082516,
+   "eccentricity": 7,
+   "closnesscentrality": 0.266065,
+   "harmonicclosnesscentrality": 0.294643,
+   "betweenesscentrality": 0.008962,
+   "degree": 3
+ },
+ {
+   "id": "Elohim City",
+   "label": "Elohim City",
+   "modularity_class": 1,
+   "eigencentrality": 0.249809,
+   "eccentricity": 7,
+   "closnesscentrality": 0.265467,
+   "harmonicclosnesscentrality": 0.327058,
+   "betweenesscentrality": 0.052982,
+   "degree": 15
+ },
+ {
+   "id": "Timothy McVeigh",
+   "label": "Timothy McVeigh",
+   "modularity_class": 1,
+   "eigencentrality": 0.253836,
+   "eccentricity": 7,
+   "closnesscentrality": 0.281623,
+   "harmonicclosnesscentrality": 0.344038,
+   "betweenesscentrality": 0.066562,
+   "degree": 17
+ },
+ {
+   "id": "Waco Siege",
+   "label": "Waco Siege",
+   "modularity_class": 1,
+   "eigencentrality": 0.099087,
+   "eccentricity": 8,
+   "closnesscentrality": 0.235764,
+   "harmonicclosnesscentrality": 0.273512,
+   "betweenesscentrality": 0.001818,
+   "degree": 5
+ },
+ {
+   "id": "Andrew Barnhill",
+   "label": "Andrew Barnhill",
+   "modularity_class": 0,
+   "eigencentrality": 0.116896,
+   "eccentricity": 7,
+   "closnesscentrality": 0.242051,
+   "harmonicclosnesscentrality": 0.278238,
+   "betweenesscentrality": 0.002319,
+   "degree": 4
+ },
+ {
+   "id": "Covenant Sword and Arm of the Lord",
+   "label": "Covenant Sword and Arm of the Lord",
+   "modularity_class": 5,
+   "eigencentrality": 0.203015,
+   "eccentricity": 6,
+   "closnesscentrality": 0.282974,
+   "harmonicclosnesscentrality": 0.330862,
+   "betweenesscentrality": 0.03301,
+   "degree": 12
+ },
+ {
+   "id": "Racketeering Conspiracy",
+   "label": "Racketeering Conspiracy",
+   "modularity_class": 0,
+   "eigencentrality": 0.230459,
+   "eccentricity": 7,
+   "closnesscentrality": 0.239594,
+   "harmonicclosnesscentrality": 0.29435,
+   "betweenesscentrality": 0.012814,
+   "degree": 15
+ },
+ {
+   "id": "The Order",
+   "label": "The Order",
+   "modularity_class": 0,
+   "eigencentrality": 0.357766,
+   "eccentricity": 6,
+   "closnesscentrality": 0.298734,
+   "harmonicclosnesscentrality": 0.362429,
+   "betweenesscentrality": 0.067703,
+   "degree": 20
+ },
+ {
+   "id": "1983-84 Armored Car Robberies",
+   "label": "1983-84 Armored Car Robberies",
+   "modularity_class": 0,
+   "eigencentrality": 0.132899,
+   "eccentricity": 8,
+   "closnesscentrality": 0.225837,
+   "harmonicclosnesscentrality": 0.263453,
+   "betweenesscentrality": 0.001707,
+   "degree": 8
+ },
+ {
+   "id": "Ardie McBrearty",
+   "label": "Ardie McBrearty",
+   "modularity_class": 0,
+   "eigencentrality": 0.159003,
+   "eccentricity": 6,
+   "closnesscentrality": 0.277647,
+   "harmonicclosnesscentrality": 0.317938,
+   "betweenesscentrality": 0.015202,
+   "degree": 5
+ },
+ {
+   "id": "Fort Smith sedition trial",
+   "label": "Fort Smith sedition trial",
+   "modularity_class": 0,
+   "eigencentrality": 0.215575,
+   "eccentricity": 6,
+   "closnesscentrality": 0.316354,
+   "harmonicclosnesscentrality": 0.355508,
+   "betweenesscentrality": 0.047177,
+   "degree": 9
+ },
+ {
+   "id": "Arizona Patriots",
+   "label": "Arizona Patriots",
+   "modularity_class": 2,
+   "eigencentrality": 0.021581,
+   "eccentricity": 7,
+   "closnesscentrality": 0.231373,
+   "harmonicclosnesscentrality": 0.249707,
+   "betweenesscentrality": 0.008475,
+   "degree": 2
+ },
+ {
+   "id": "Committee of the States",
+   "label": "Committee of the States",
+   "modularity_class": 2,
+   "eigencentrality": 0.171867,
+   "eccentricity": 6,
+   "closnesscentrality": 0.299873,
+   "harmonicclosnesscentrality": 0.335593,
+   "betweenesscentrality": 0.036975,
+   "degree": 5
+ },
+ {
+   "id": "1986 Armored car bombing plot",
+   "label": "1986 Armored car bombing plot",
+   "modularity_class": 2,
+   "eigencentrality": 0.003839,
+   "eccentricity": 8,
+   "closnesscentrality": 0.188048,
+   "harmonicclosnesscentrality": 0.198482,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Aryan Nations",
+   "label": "Aryan Nations",
+   "modularity_class": 6,
+   "eigencentrality": 0.490471,
+   "eccentricity": 6,
+   "closnesscentrality": 0.350669,
+   "harmonicclosnesscentrality": 0.412147,
+   "betweenesscentrality": 0.151884,
+   "degree": 21
+ },
+ {
+   "id": "Church of Jesus Christ-Christian",
+   "label": "Church of Jesus Christ-Christian",
+   "modularity_class": 2,
+   "eigencentrality": 0.529754,
+   "eccentricity": 6,
+   "closnesscentrality": 0.33908,
+   "harmonicclosnesscentrality": 0.393008,
+   "betweenesscentrality": 0.062113,
+   "degree": 13
+ },
+ {
+   "id": "Aryan Republican Army (ARA)",
+   "label": "Aryan Republican Army (ARA)",
+   "modularity_class": 1,
+   "eigencentrality": 0.176464,
+   "eccentricity": 8,
+   "closnesscentrality": 0.261641,
+   "harmonicclosnesscentrality": 0.313796,
+   "betweenesscentrality": 0.035925,
+   "degree": 12
+ },
+ {
+   "id": "Vigilantes of Christiandom",
+   "label": "Vigilantes of Christiandom",
+   "modularity_class": 7,
+   "eigencentrality": 0.057528,
+   "eccentricity": 8,
+   "closnesscentrality": 0.246862,
+   "harmonicclosnesscentrality": 0.279928,
+   "betweenesscentrality": 0.014979,
+   "degree": 4
+ },
+ {
+   "id": "1990s Bank Robberies",
+   "label": "1990s Bank Robberies",
+   "modularity_class": 1,
+   "eigencentrality": 0.081359,
+   "eccentricity": 8,
+   "closnesscentrality": 0.238625,
+   "harmonicclosnesscentrality": 0.271282,
+   "betweenesscentrality": 0.000806,
+   "degree": 5
+ },
+ {
+   "id": "Turner Diaries",
+   "label": "Turner Diaries",
+   "modularity_class": 6,
+   "eigencentrality": 0.162744,
+   "eccentricity": 7,
+   "closnesscentrality": 0.30102,
+   "harmonicclosnesscentrality": 0.343049,
+   "betweenesscentrality": 0.0354,
+   "degree": 7
+ },
+ {
+   "id": "Benny Waldrup",
+   "label": "Benny Waldrup",
+   "modularity_class": 2,
+   "eigencentrality": 0.074586,
+   "eccentricity": 9,
+   "closnesscentrality": 0.221805,
+   "harmonicclosnesscentrality": 0.247333,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Swift Underground",
+   "label": "Swift Underground",
+   "modularity_class": 2,
+   "eigencentrality": 0.292595,
+   "eccentricity": 8,
+   "closnesscentrality": 0.270953,
+   "harmonicclosnesscentrality": 0.317489,
+   "betweenesscentrality": 0.006433,
+   "degree": 7
+ },
+ {
+   "id": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "label": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "modularity_class": 2,
+   "eigencentrality": 0.402581,
+   "eccentricity": 8,
+   "closnesscentrality": 0.270642,
+   "harmonicclosnesscentrality": 0.325752,
+   "betweenesscentrality": 0.012101,
+   "degree": 13
+ },
+ {
+   "id": "Bertrand Comparet",
+   "label": "Bertrand Comparet",
+   "modularity_class": 2,
+   "eigencentrality": 0.079034,
+   "eccentricity": 7,
+   "closnesscentrality": 0.249471,
+   "harmonicclosnesscentrality": 0.27844,
+   "betweenesscentrality": 0.001331,
+   "degree": 4
+ },
+ {
+   "id": "California Anti-Communist League",
+   "label": "California Anti-Communist League",
+   "modularity_class": 2,
+   "eigencentrality": 0.115942,
+   "eccentricity": 8,
+   "closnesscentrality": 0.257642,
+   "harmonicclosnesscentrality": 0.292075,
+   "betweenesscentrality": 0.000438,
+   "degree": 2
+ },
+ {
+   "id": "Gerald L.K. Smith",
+   "label": "Gerald L.K. Smith",
+   "modularity_class": 4,
+   "eigencentrality": 0.183976,
+   "eccentricity": 6,
+   "closnesscentrality": 0.287805,
+   "harmonicclosnesscentrality": 0.337076,
+   "betweenesscentrality": 0.084176,
+   "degree": 10
+ },
+ {
+   "id": "Christian Defense League",
+   "label": "Christian Defense League",
+   "modularity_class": 2,
+   "eigencentrality": 0.272589,
+   "eccentricity": 7,
+   "closnesscentrality": 0.305304,
+   "harmonicclosnesscentrality": 0.348204,
+   "betweenesscentrality": 0.010708,
+   "degree": 6
+ },
+ {
+   "id": "Bill Holt",
+   "label": "Bill Holt",
+   "modularity_class": 3,
+   "eigencentrality": 0.121847,
+   "eccentricity": 8,
+   "closnesscentrality": 0.260486,
+   "harmonicclosnesscentrality": 0.297725,
+   "betweenesscentrality": 0.002928,
+   "degree": 2
+ },
+ {
+   "id": "Eastview Klavern 13",
+   "label": "Eastview Klavern 13",
+   "modularity_class": 3,
+   "eigencentrality": 0.123102,
+   "eccentricity": 8,
+   "closnesscentrality": 0.248945,
+   "harmonicclosnesscentrality": 0.290441,
+   "betweenesscentrality": 0.017356,
+   "degree": 8
+ },
+ {
+   "id": "Wesley Swift",
+   "label": "Wesley Swift",
+   "modularity_class": 2,
+   "eigencentrality": 1,
+   "eccentricity": 7,
+   "closnesscentrality": 0.345534,
+   "harmonicclosnesscentrality": 0.4386,
+   "betweenesscentrality": 0.194776,
+   "degree": 34
+ },
+ {
+   "id": "Bob Hallstrom",
+   "label": "Bob Hallstrom",
+   "modularity_class": 6,
+   "eigencentrality": 0.074418,
+   "eccentricity": 6,
+   "closnesscentrality": 0.269099,
+   "harmonicclosnesscentrality": 0.29315,
+   "betweenesscentrality": 0.001948,
+   "degree": 2
+ },
+ {
+   "id": "Bob Smith",
+   "label": "Bob Smith",
+   "modularity_class": 2,
+   "eigencentrality": 0.324089,
+   "eccentricity": 7,
+   "closnesscentrality": 0.27929,
+   "harmonicclosnesscentrality": 0.323557,
+   "betweenesscentrality": 0.000745,
+   "degree": 6
+ },
+ {
+   "id": "Tommy Tarrants",
+   "label": "Tommy Tarrants",
+   "modularity_class": 2,
+   "eigencentrality": 0.338341,
+   "eccentricity": 8,
+   "closnesscentrality": 0.271577,
+   "harmonicclosnesscentrality": 0.320314,
+   "betweenesscentrality": 0.003678,
+   "degree": 8
+ },
+ {
+   "id": "John Crommelin",
+   "label": "John Crommelin",
+   "modularity_class": 2,
+   "eigencentrality": 0.416222,
+   "eccentricity": 7,
+   "closnesscentrality": 0.297229,
+   "harmonicclosnesscentrality": 0.345591,
+   "betweenesscentrality": 0.009922,
+   "degree": 8
+ },
+ {
+   "id": "Sidney Crockett Barnes",
+   "label": "Sidney Crockett Barnes",
+   "modularity_class": 2,
+   "eigencentrality": 0.486264,
+   "eccentricity": 7,
+   "closnesscentrality": 0.302953,
+   "harmonicclosnesscentrality": 0.353006,
+   "betweenesscentrality": 0.012809,
+   "degree": 10
+ },
+ {
+   "id": "Noah Jefferson (Jeff) Carden",
+   "label": "Noah Jefferson (Jeff) Carden",
+   "modularity_class": 2,
+   "eigencentrality": 0.297364,
+   "eccentricity": 7,
+   "closnesscentrality": 0.282974,
+   "harmonicclosnesscentrality": 0.325817,
+   "betweenesscentrality": 0.004962,
+   "degree": 6
+ },
+ {
+   "id": "Bobby Cherry",
+   "label": "Bobby Cherry",
+   "modularity_class": 3,
+   "eigencentrality": 0.02262,
+   "eccentricity": 9,
+   "closnesscentrality": 0.199662,
+   "harmonicclosnesscentrality": 0.220457,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "1963 Sixteenth Street Baptist Church Bombing",
+   "label": "1963 Sixteenth Street Baptist Church Bombing",
+   "modularity_class": 3,
+   "eigencentrality": 0.040573,
+   "eccentricity": 9,
+   "closnesscentrality": 0.20034,
+   "harmonicclosnesscentrality": 0.225753,
+   "betweenesscentrality": 0.000075,
+   "degree": 4
+ },
+ {
+   "id": "Brian J. Ratigan",
+   "label": "Brian J. Ratigan",
+   "modularity_class": 7,
+   "eigencentrality": 0.016188,
+   "eccentricity": 8,
+   "closnesscentrality": 0.211091,
+   "harmonicclosnesscentrality": 0.23242,
+   "betweenesscentrality": 0.008475,
+   "degree": 2
+ },
+ {
+   "id": "1996 Spokane Bombings",
+   "label": "1996 Spokane Bombings",
+   "modularity_class": 7,
+   "eigencentrality": 0.003732,
+   "eccentricity": 9,
+   "closnesscentrality": 0.174427,
+   "harmonicclosnesscentrality": 0.186387,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Phineas Priesthood",
+   "label": "Phineas Priesthood",
+   "modularity_class": 7,
+   "eigencentrality": 0.084994,
+   "eccentricity": 7,
+   "closnesscentrality": 0.266667,
+   "harmonicclosnesscentrality": 0.31134,
+   "betweenesscentrality": 0.08529,
+   "degree": 11
+ },
+ {
+   "id": "British Israelism",
+   "label": "British Israelism",
+   "modularity_class": 4,
+   "eigencentrality": 0.0377,
+   "eccentricity": 7,
+   "closnesscentrality": 0.232055,
+   "harmonicclosnesscentrality": 0.263196,
+   "betweenesscentrality": 0.018142,
+   "degree": 4
+ },
+ {
+   "id": "William J. Cameron",
+   "label": "William J. Cameron",
+   "modularity_class": 4,
+   "eigencentrality": 0.02617,
+   "eccentricity": 8,
+   "closnesscentrality": 0.190169,
+   "harmonicclosnesscentrality": 0.218992,
+   "betweenesscentrality": 0.0123,
+   "degree": 6
+ },
+ {
+   "id": "Bruce Pierce",
+   "label": "Bruce Pierce",
+   "modularity_class": 0,
+   "eigencentrality": 0.193098,
+   "eccentricity": 7,
+   "closnesscentrality": 0.27929,
+   "harmonicclosnesscentrality": 0.318826,
+   "betweenesscentrality": 0.007423,
+   "degree": 6
+ },
+ {
+   "id": "Murder of Alan Berg",
+   "label": "Murder of Alan Berg",
+   "modularity_class": 0,
+   "eigencentrality": 0.159487,
+   "eccentricity": 7,
+   "closnesscentrality": 0.260198,
+   "harmonicclosnesscentrality": 0.297962,
+   "betweenesscentrality": 0.000616,
+   "degree": 6
+ },
+ {
+   "id": "Buddy Tucker",
+   "label": "Buddy Tucker",
+   "modularity_class": 5,
+   "eigencentrality": 0.130852,
+   "eccentricity": 5,
+   "closnesscentrality": 0.31593,
+   "harmonicclosnesscentrality": 0.343785,
+   "betweenesscentrality": 0.058917,
+   "degree": 5
+ },
+ {
+   "id": "National Emancipation of our White Seed",
+   "label": "National Emancipation of our White Seed",
+   "modularity_class": 5,
+   "eigencentrality": 0.065656,
+   "eccentricity": 6,
+   "closnesscentrality": 0.276023,
+   "harmonicclosnesscentrality": 0.296963,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Dan Gayman",
+   "label": "Dan Gayman",
+   "modularity_class": 5,
+   "eigencentrality": 0.249647,
+   "eccentricity": 5,
+   "closnesscentrality": 0.327323,
+   "harmonicclosnesscentrality": 0.375353,
+   "betweenesscentrality": 0.086783,
+   "degree": 11
+ },
+ {
+   "id": "Richard Girnt Butler",
+   "label": "Richard Girnt Butler",
+   "modularity_class": 6,
+   "eigencentrality": 0.443157,
+   "eccentricity": 6,
+   "closnesscentrality": 0.354354,
+   "harmonicclosnesscentrality": 0.407345,
+   "betweenesscentrality": 0.124139,
+   "degree": 14
+ },
+ {
+   "id": "Byron de la Beckwith",
+   "label": "Byron de la Beckwith",
+   "modularity_class": 5,
+   "eigencentrality": 0.158532,
+   "eccentricity": 6,
+   "closnesscentrality": 0.288862,
+   "harmonicclosnesscentrality": 0.328743,
+   "betweenesscentrality": 0.059567,
+   "degree": 7
+ },
+ {
+   "id": "Buford Oneal Furrow",
+   "label": "Buford Oneal Furrow",
+   "modularity_class": 6,
+   "eigencentrality": 0.146838,
+   "eccentricity": 6,
+   "closnesscentrality": 0.299492,
+   "harmonicclosnesscentrality": 0.332556,
+   "betweenesscentrality": 0.026074,
+   "degree": 6
+ },
+ {
+   "id": "North Valley Jewish Community Center Shooting",
+   "label": "North Valley Jewish Community Center Shooting",
+   "modularity_class": 6,
+   "eigencentrality": 0.017964,
+   "eccentricity": 7,
+   "closnesscentrality": 0.230694,
+   "harmonicclosnesscentrality": 0.245248,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Richard Kelly Hoskins",
+   "label": "Richard Kelly Hoskins",
+   "modularity_class": 7,
+   "eigencentrality": 0.046273,
+   "eccentricity": 7,
+   "closnesscentrality": 0.252947,
+   "harmonicclosnesscentrality": 0.279671,
+   "betweenesscentrality": 0.011877,
+   "degree": 4
+ },
+ {
+   "id": "White Citizens Council",
+   "label": "White Citizens Council",
+   "modularity_class": 5,
+   "eigencentrality": 0.050353,
+   "eccentricity": 7,
+   "closnesscentrality": 0.241309,
+   "harmonicclosnesscentrality": 0.265335,
+   "betweenesscentrality": 0.001362,
+   "degree": 2
+ },
+ {
+   "id": "Murder of Medgar Evers",
+   "label": "Murder of Medgar Evers",
+   "modularity_class": 5,
+   "eigencentrality": 0.019277,
+   "eccentricity": 7,
+   "closnesscentrality": 0.224335,
+   "harmonicclosnesscentrality": 0.241717,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Sam Bowers",
+   "label": "Sam Bowers",
+   "modularity_class": 2,
+   "eigencentrality": 0.47763,
+   "eccentricity": 7,
+   "closnesscentrality": 0.285714,
+   "harmonicclosnesscentrality": 0.346721,
+   "betweenesscentrality": 0.025785,
+   "degree": 14
+ },
+ {
+   "id": "J.B. Stoner",
+   "label": "J.B. Stoner",
+   "modularity_class": 2,
+   "eigencentrality": 0.466773,
+   "eccentricity": 7,
+   "closnesscentrality": 0.292804,
+   "harmonicclosnesscentrality": 0.358303,
+   "betweenesscentrality": 0.051191,
+   "degree": 18
+ },
+ {
+   "id": "Scott Shepherd",
+   "label": "Scott Shepherd",
+   "modularity_class": 2,
+   "eigencentrality": 0.132962,
+   "eccentricity": 7,
+   "closnesscentrality": 0.247899,
+   "harmonicclosnesscentrality": 0.283656,
+   "betweenesscentrality": 0.000672,
+   "degree": 4
+ },
+ {
+   "id": "California Knights of the KKK",
+   "label": "California Knights of the KKK",
+   "modularity_class": 2,
+   "eigencentrality": 0.085368,
+   "eccentricity": 7,
+   "closnesscentrality": 0.249208,
+   "harmonicclosnesscentrality": 0.278006,
+   "betweenesscentrality": 0.002252,
+   "degree": 4
+ },
+ {
+   "id": "National Knights of the KKK (NKKKK)",
+   "label": "National Knights of the KKK (NKKKK)",
+   "modularity_class": 2,
+   "eigencentrality": 0.174159,
+   "eccentricity": 8,
+   "closnesscentrality": 0.252677,
+   "harmonicclosnesscentrality": 0.293901,
+   "betweenesscentrality": 0.000984,
+   "degree": 5
+ },
+ {
+   "id": "California Rangers",
+   "label": "California Rangers",
+   "modularity_class": 2,
+   "eigencentrality": 0.241853,
+   "eccentricity": 7,
+   "closnesscentrality": 0.281959,
+   "harmonicclosnesscentrality": 0.324334,
+   "betweenesscentrality": 0.006626,
+   "degree": 5
+ },
+ {
+   "id": "Minutemen",
+   "label": "Minutemen",
+   "modularity_class": 2,
+   "eigencentrality": 0.290948,
+   "eccentricity": 7,
+   "closnesscentrality": 0.275379,
+   "harmonicclosnesscentrality": 0.331184,
+   "betweenesscentrality": 0.025821,
+   "degree": 13
+ },
+ {
+   "id": "Charles Barbee",
+   "label": "Charles Barbee",
+   "modularity_class": 7,
+   "eigencentrality": 0.028245,
+   "eccentricity": 8,
+   "closnesscentrality": 0.211849,
+   "harmonicclosnesscentrality": 0.23807,
+   "betweenesscentrality": 0.003125,
+   "degree": 4
+ },
+ {
+   "id": "1996 Spokane Bank Robbery",
+   "label": "1996 Spokane Bank Robbery",
+   "modularity_class": 7,
+   "eigencentrality": 0.020864,
+   "eccentricity": 9,
+   "closnesscentrality": 0.19716,
+   "harmonicclosnesscentrality": 0.217269,
+   "betweenesscentrality": 0.000385,
+   "degree": 3
+ },
+ {
+   "id": "1996 Spokane Abortion Clinic Bombing",
+   "label": "1996 Spokane Abortion Clinic Bombing",
+   "modularity_class": 7,
+   "eigencentrality": 0.020864,
+   "eccentricity": 9,
+   "closnesscentrality": 0.19716,
+   "harmonicclosnesscentrality": 0.217269,
+   "betweenesscentrality": 0.000385,
+   "degree": 3
+ },
+ {
+   "id": "1996 Spokane Newspaper Bombing",
+   "label": "1996 Spokane Newspaper Bombing",
+   "modularity_class": 7,
+   "eigencentrality": 0.020864,
+   "eccentricity": 9,
+   "closnesscentrality": 0.19716,
+   "harmonicclosnesscentrality": 0.217269,
+   "betweenesscentrality": 0.000385,
+   "degree": 3
+ },
+ {
+   "id": "Chevie Kehoe",
+   "label": "Chevie Kehoe",
+   "modularity_class": 1,
+   "eigencentrality": 0.153105,
+   "eccentricity": 8,
+   "closnesscentrality": 0.242549,
+   "harmonicclosnesscentrality": 0.288514,
+   "betweenesscentrality": 0.017203,
+   "degree": 8
+ },
+ {
+   "id": "Mueller Family Murders",
+   "label": "Mueller Family Murders",
+   "modularity_class": 1,
+   "eigencentrality": 0.020297,
+   "eccentricity": 9,
+   "closnesscentrality": 0.195364,
+   "harmonicclosnesscentrality": 0.216235,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Aryan Peoples Republic",
+   "label": "Aryan Peoples Republic",
+   "modularity_class": 1,
+   "eigencentrality": 0.032159,
+   "eccentricity": 9,
+   "closnesscentrality": 0.196013,
+   "harmonicclosnesscentrality": 0.221884,
+   "betweenesscentrality": 0.000279,
+   "degree": 3
+ },
+ {
+   "id": "Michael Brescia",
+   "label": "Michael Brescia",
+   "modularity_class": 1,
+   "eigencentrality": 0.147329,
+   "eccentricity": 8,
+   "closnesscentrality": 0.242051,
+   "harmonicclosnesscentrality": 0.284277,
+   "betweenesscentrality": 0.001581,
+   "degree": 6
+ },
+ {
+   "id": "Christian Patriots Defense League",
+   "label": "Christian Patriots Defense League",
+   "modularity_class": 5,
+   "eigencentrality": 0.146861,
+   "eccentricity": 6,
+   "closnesscentrality": 0.292079,
+   "harmonicclosnesscentrality": 0.332415,
+   "betweenesscentrality": 0.028734,
+   "degree": 7
+ },
+ {
+   "id": "William Potter Gale",
+   "label": "William Potter Gale",
+   "modularity_class": 2,
+   "eigencentrality": 0.53743,
+   "eccentricity": 6,
+   "closnesscentrality": 0.321526,
+   "harmonicclosnesscentrality": 0.386088,
+   "betweenesscentrality": 0.08645,
+   "degree": 17
+ },
+ {
+   "id": "Connie Lynch",
+   "label": "Connie Lynch",
+   "modularity_class": 2,
+   "eigencentrality": 0.19179,
+   "eccentricity": 7,
+   "closnesscentrality": 0.283313,
+   "harmonicclosnesscentrality": 0.32045,
+   "betweenesscentrality": 0.004496,
+   "degree": 4
+ },
+ {
+   "id": "Conrad Gaard",
+   "label": "Conrad Gaard",
+   "modularity_class": 4,
+   "eigencentrality": 0.039202,
+   "eccentricity": 7,
+   "closnesscentrality": 0.224762,
+   "harmonicclosnesscentrality": 0.247871,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Christian Nationalist Crusade",
+   "label": "Christian Nationalist Crusade",
+   "modularity_class": 4,
+   "eigencentrality": 0.142942,
+   "eccentricity": 7,
+   "closnesscentrality": 0.268182,
+   "harmonicclosnesscentrality": 0.307809,
+   "betweenesscentrality": 0.004627,
+   "degree": 4
+ },
+ {
+   "id": "Church of Israel",
+   "label": "Church of Israel",
+   "modularity_class": 5,
+   "eigencentrality": 0.092351,
+   "eccentricity": 6,
+   "closnesscentrality": 0.262806,
+   "harmonicclosnesscentrality": 0.29661,
+   "betweenesscentrality": 0.035529,
+   "degree": 5
+ },
+ {
+   "id": "Jack Mohr",
+   "label": "Jack Mohr",
+   "modularity_class": 5,
+   "eigencentrality": 0.072517,
+   "eccentricity": 6,
+   "closnesscentrality": 0.277974,
+   "harmonicclosnesscentrality": 0.303602,
+   "betweenesscentrality": 0.003896,
+   "degree": 4
+ },
+ {
+   "id": "John Harrell",
+   "label": "John Harrell",
+   "modularity_class": 5,
+   "eigencentrality": 0.049351,
+   "eccentricity": 6,
+   "closnesscentrality": 0.263099,
+   "harmonicclosnesscentrality": 0.285169,
+   "betweenesscentrality": 0.000482,
+   "degree": 2
+ },
+ {
+   "id": "Thomas Robb",
+   "label": "Thomas Robb",
+   "modularity_class": 1,
+   "eigencentrality": 0.106869,
+   "eccentricity": 6,
+   "closnesscentrality": 0.283995,
+   "harmonicclosnesscentrality": 0.317726,
+   "betweenesscentrality": 0.013837,
+   "degree": 5
+ },
+ {
+   "id": "Daniel Bauer",
+   "label": "Daniel Bauer",
+   "modularity_class": 0,
+   "eigencentrality": 0.118026,
+   "eccentricity": 7,
+   "closnesscentrality": 0.270642,
+   "harmonicclosnesscentrality": 0.302724,
+   "betweenesscentrality": 0.002276,
+   "degree": 3
+ },
+ {
+   "id": "Daniel Mahon",
+   "label": "Daniel Mahon",
+   "modularity_class": 1,
+   "eigencentrality": 0.041996,
+   "eccentricity": 7,
+   "closnesscentrality": 0.24456,
+   "harmonicclosnesscentrality": 0.267665,
+   "betweenesscentrality": 0.001524,
+   "degree": 3
+ },
+ {
+   "id": "Scottsdale Office of Diversity mail bombing",
+   "label": "Scottsdale Office of Diversity mail bombing",
+   "modularity_class": 1,
+   "eigencentrality": 0.026322,
+   "eccentricity": 8,
+   "closnesscentrality": 0.217311,
+   "harmonicclosnesscentrality": 0.239245,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Knights of the Ku Klux Klan (KKKK)",
+   "label": "Knights of the Ku Klux Klan (KKKK)",
+   "modularity_class": 1,
+   "eigencentrality": 0.13738,
+   "eccentricity": 6,
+   "closnesscentrality": 0.30102,
+   "harmonicclosnesscentrality": 0.335028,
+   "betweenesscentrality": 0.023509,
+   "degree": 7
+ },
+ {
+   "id": "Danny Lee",
+   "label": "Danny Lee",
+   "modularity_class": 1,
+   "eigencentrality": 0.038241,
+   "eccentricity": 8,
+   "closnesscentrality": 0.210339,
+   "harmonicclosnesscentrality": 0.238045,
+   "betweenesscentrality": 0.000933,
+   "degree": 2
+ },
+ {
+   "id": "Sheldon Emry",
+   "label": "Sheldon Emry",
+   "modularity_class": 6,
+   "eigencentrality": 0.029342,
+   "eccentricity": 8,
+   "closnesscentrality": 0.231827,
+   "harmonicclosnesscentrality": 0.255413,
+   "betweenesscentrality": 0.01826,
+   "degree": 4
+ },
+ {
+   "id": "Jay Merrell",
+   "label": "Jay Merrell",
+   "modularity_class": 7,
+   "eigencentrality": 0.051602,
+   "eccentricity": 8,
+   "closnesscentrality": 0.244306,
+   "harmonicclosnesscentrality": 0.276528,
+   "betweenesscentrality": 0.024454,
+   "degree": 6
+ },
+ {
+   "id": "David Andreas",
+   "label": "David Andreas",
+   "modularity_class": 8,
+   "eigencentrality": 0.068263,
+   "eccentricity": 7,
+   "closnesscentrality": 0.235764,
+   "harmonicclosnesscentrality": 0.263075,
+   "betweenesscentrality": 0.001163,
+   "degree": 4
+ },
+ {
+   "id": "Murders of Luke Stice and James Thimm",
+   "label": "Murders of Luke Stice and James Thimm",
+   "modularity_class": 8,
+   "eigencentrality": 0.051355,
+   "eccentricity": 8,
+   "closnesscentrality": 0.202228,
+   "harmonicclosnesscentrality": 0.227694,
+   "betweenesscentrality": 0.000072,
+   "degree": 5
+ },
+ {
+   "id": "Michael Wayne Ryan",
+   "label": "Michael Wayne Ryan",
+   "modularity_class": 8,
+   "eigencentrality": 0.114954,
+   "eccentricity": 7,
+   "closnesscentrality": 0.251868,
+   "harmonicclosnesscentrality": 0.290547,
+   "betweenesscentrality": 0.007745,
+   "degree": 9
+ },
+ {
+   "id": "David Duke",
+   "label": "David Duke",
+   "modularity_class": 1,
+   "eigencentrality": 0.116246,
+   "eccentricity": 6,
+   "closnesscentrality": 0.27863,
+   "harmonicclosnesscentrality": 0.313136,
+   "betweenesscentrality": 0.012402,
+   "degree": 7
+ },
+ {
+   "id": "Tom Metzger",
+   "label": "Tom Metzger",
+   "modularity_class": 1,
+   "eigencentrality": 0.10558,
+   "eccentricity": 7,
+   "closnesscentrality": 0.267877,
+   "harmonicclosnesscentrality": 0.305408,
+   "betweenesscentrality": 0.017131,
+   "degree": 6
+ },
+ {
+   "id": "Populist Party",
+   "label": "Populist Party",
+   "modularity_class": 6,
+   "eigencentrality": 0.037134,
+   "eccentricity": 7,
+   "closnesscentrality": 0.238866,
+   "harmonicclosnesscentrality": 0.26249,
+   "betweenesscentrality": 0.0006,
+   "degree": 3
+ },
+ {
+   "id": "New Christian Crusade Church",
+   "label": "New Christian Crusade Church",
+   "modularity_class": 1,
+   "eigencentrality": 0.06875,
+   "eccentricity": 6,
+   "closnesscentrality": 0.260773,
+   "harmonicclosnesscentrality": 0.286158,
+   "betweenesscentrality": 0.000236,
+   "degree": 3
+ },
+ {
+   "id": "David John Moran",
+   "label": "David John Moran",
+   "modularity_class": 2,
+   "eigencentrality": 0.021581,
+   "eccentricity": 7,
+   "closnesscentrality": 0.231373,
+   "harmonicclosnesscentrality": 0.249707,
+   "betweenesscentrality": 0.008475,
+   "degree": 2
+ },
+ {
+   "id": "1986 armed robberies",
+   "label": "1986 armed robberies",
+   "modularity_class": 2,
+   "eigencentrality": 0.003839,
+   "eccentricity": 8,
+   "closnesscentrality": 0.188048,
+   "harmonicclosnesscentrality": 0.198482,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "David Lane",
+   "label": "David Lane",
+   "modularity_class": 0,
+   "eigencentrality": 0.177387,
+   "eccentricity": 7,
+   "closnesscentrality": 0.273148,
+   "harmonicclosnesscentrality": 0.31593,
+   "betweenesscentrality": 0.012215,
+   "degree": 8
+ },
+ {
+   "id": "Church of LaPorte",
+   "label": "Church of LaPorte",
+   "modularity_class": 0,
+   "eigencentrality": 0.079951,
+   "eccentricity": 7,
+   "closnesscentrality": 0.252137,
+   "harmonicclosnesscentrality": 0.283414,
+   "betweenesscentrality": 0.00731,
+   "degree": 6
+ },
+ {
+   "id": "Robert Mathews",
+   "label": "Robert Mathews",
+   "modularity_class": 0,
+   "eigencentrality": 0.268396,
+   "eccentricity": 6,
+   "closnesscentrality": 0.31593,
+   "harmonicclosnesscentrality": 0.361511,
+   "betweenesscentrality": 0.042515,
+   "degree": 10
+ },
+ {
+   "id": "Zillah Craig",
+   "label": "Zillah Craig",
+   "modularity_class": 0,
+   "eigencentrality": 0.071352,
+   "eccentricity": 7,
+   "closnesscentrality": 0.25,
+   "harmonicclosnesscentrality": 0.278723,
+   "betweenesscentrality": 0.005326,
+   "degree": 4
+ },
+ {
+   "id": "David Tate",
+   "label": "David Tate",
+   "modularity_class": 6,
+   "eigencentrality": 0.142127,
+   "eccentricity": 7,
+   "closnesscentrality": 0.277647,
+   "harmonicclosnesscentrality": 0.315365,
+   "betweenesscentrality": 0.016191,
+   "degree": 5
+ },
+ {
+   "id": "Murder of Missouri State Trooper",
+   "label": "Murder of Missouri State Trooper",
+   "modularity_class": 6,
+   "eigencentrality": 0.017425,
+   "eccentricity": 8,
+   "closnesscentrality": 0.217512,
+   "harmonicclosnesscentrality": 0.234741,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "David Trochmann",
+   "label": "David Trochmann",
+   "modularity_class": 6,
+   "eigencentrality": 0.017622,
+   "eccentricity": 8,
+   "closnesscentrality": 0.214156,
+   "harmonicclosnesscentrality": 0.231815,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Militia of Montana",
+   "label": "Militia of Montana",
+   "modularity_class": 6,
+   "eigencentrality": 0.017622,
+   "eccentricity": 8,
+   "closnesscentrality": 0.214156,
+   "harmonicclosnesscentrality": 0.231815,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Debbi Mathews",
+   "label": "Debbi Mathews",
+   "modularity_class": 6,
+   "eigencentrality": 0.099158,
+   "eccentricity": 7,
+   "closnesscentrality": 0.285714,
+   "harmonicclosnesscentrality": 0.309786,
+   "betweenesscentrality": 0.001085,
+   "degree": 3
+ },
+ {
+   "id": "Dennis Mahon",
+   "label": "Dennis Mahon",
+   "modularity_class": 1,
+   "eigencentrality": 0.145307,
+   "eccentricity": 7,
+   "closnesscentrality": 0.276995,
+   "harmonicclosnesscentrality": 0.323245,
+   "betweenesscentrality": 0.037607,
+   "degree": 9
+ },
+ {
+   "id": "Dennis Mower",
+   "label": "Dennis Mower",
+   "modularity_class": 2,
+   "eigencentrality": 0.138996,
+   "eccentricity": 8,
+   "closnesscentrality": 0.266968,
+   "harmonicclosnesscentrality": 0.301811,
+   "betweenesscentrality": 0.000417,
+   "degree": 2
+ },
+ {
+   "id": "Dennis Ryan",
+   "label": "Dennis Ryan",
+   "modularity_class": 8,
+   "eigencentrality": 0.057679,
+   "eccentricity": 7,
+   "closnesscentrality": 0.235294,
+   "harmonicclosnesscentrality": 0.26025,
+   "betweenesscentrality": 0.001097,
+   "degree": 3
+ },
+ {
+   "id": "Ed Fields",
+   "label": "Ed Fields",
+   "modularity_class": 2,
+   "eigencentrality": 0.281017,
+   "eccentricity": 7,
+   "closnesscentrality": 0.29064,
+   "harmonicclosnesscentrality": 0.337399,
+   "betweenesscentrality": 0.016462,
+   "degree": 7
+ },
+ {
+   "id": "National States Rights Party",
+   "label": "National States Rights Party",
+   "modularity_class": 2,
+   "eigencentrality": 0.49985,
+   "eccentricity": 7,
+   "closnesscentrality": 0.311757,
+   "harmonicclosnesscentrality": 0.373487,
+   "betweenesscentrality": 0.064238,
+   "degree": 17
+ },
+ {
+   "id": "New Order Knights of the KKK",
+   "label": "New Order Knights of the KKK",
+   "modularity_class": 2,
+   "eigencentrality": 0.084724,
+   "eccentricity": 8,
+   "closnesscentrality": 0.244306,
+   "harmonicclosnesscentrality": 0.271161,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Scott Stedeford",
+   "label": "Scott Stedeford",
+   "modularity_class": 1,
+   "eigencentrality": 0.067835,
+   "eccentricity": 8,
+   "closnesscentrality": 0.225837,
+   "harmonicclosnesscentrality": 0.258414,
+   "betweenesscentrality": 0.001029,
+   "degree": 3
+ },
+ {
+   "id": "Emory Burke",
+   "label": "Emory Burke",
+   "modularity_class": 4,
+   "eigencentrality": 0.070396,
+   "eccentricity": 8,
+   "closnesscentrality": 0.24816,
+   "harmonicclosnesscentrality": 0.275681,
+   "betweenesscentrality": 0.001106,
+   "degree": 2
+ },
+ {
+   "id": "Eric Rudolph",
+   "label": "Eric Rudolph",
+   "modularity_class": 9,
+   "eigencentrality": 0.016715,
+   "eccentricity": 7,
+   "closnesscentrality": 0.209406,
+   "harmonicclosnesscentrality": 0.230922,
+   "betweenesscentrality": 0.025279,
+   "degree": 3
+ },
+ {
+   "id": "Nord Davis",
+   "label": "Nord Davis",
+   "modularity_class": 9,
+   "eigencentrality": 0.005577,
+   "eccentricity": 8,
+   "closnesscentrality": 0.173529,
+   "harmonicclosnesscentrality": 0.187954,
+   "betweenesscentrality": 0.008475,
+   "degree": 2
+ },
+ {
+   "id": "Olympic Park & 3 Other Bombings",
+   "label": "Olympic Park & 3 Other Bombings",
+   "modularity_class": 9,
+   "eigencentrality": 0.003886,
+   "eccentricity": 8,
+   "closnesscentrality": 0.173275,
+   "harmonicclosnesscentrality": 0.185129,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Faron Lovelace",
+   "label": "Faron Lovelace",
+   "modularity_class": 1,
+   "eigencentrality": 0.038241,
+   "eccentricity": 8,
+   "closnesscentrality": 0.210339,
+   "harmonicclosnesscentrality": 0.238045,
+   "betweenesscentrality": 0.000933,
+   "degree": 2
+ },
+ {
+   "id": "Father Charles Coughlin",
+   "label": "Father Charles Coughlin",
+   "modularity_class": 4,
+   "eigencentrality": 0.031862,
+   "eccentricity": 7,
+   "closnesscentrality": 0.224976,
+   "harmonicclosnesscentrality": 0.250696,
+   "betweenesscentrality": 0.004031,
+   "degree": 3
+ },
+ {
+   "id": "Union Party",
+   "label": "Union Party",
+   "modularity_class": 4,
+   "eigencentrality": 0.028314,
+   "eccentricity": 7,
+   "closnesscentrality": 0.224122,
+   "harmonicclosnesscentrality": 0.247165,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Protocols of the Elders of Zion",
+   "label": "Protocols of the Elders of Zion",
+   "modularity_class": 4,
+   "eigencentrality": 0.018263,
+   "eccentricity": 8,
+   "closnesscentrality": 0.18612,
+   "harmonicclosnesscentrality": 0.208177,
+   "betweenesscentrality": 0.000183,
+   "degree": 3
+ },
+ {
+   "id": "Frank Silva",
+   "label": "Frank Silva",
+   "modularity_class": 0,
+   "eigencentrality": 0.073537,
+   "eccentricity": 7,
+   "closnesscentrality": 0.231146,
+   "harmonicclosnesscentrality": 0.258182,
+   "betweenesscentrality": 0.000101,
+   "degree": 2
+ },
+ {
+   "id": "Gary Yarborough",
+   "label": "Gary Yarborough",
+   "modularity_class": 0,
+   "eigencentrality": 0.166935,
+   "eccentricity": 7,
+   "closnesscentrality": 0.272203,
+   "harmonicclosnesscentrality": 0.308727,
+   "betweenesscentrality": 0.00476,
+   "degree": 5
+ },
+ {
+   "id": "George Joseph King Jr",
+   "label": "George Joseph King Jr",
+   "modularity_class": 2,
+   "eigencentrality": 0.086119,
+   "eccentricity": 7,
+   "closnesscentrality": 0.246347,
+   "harmonicclosnesscentrality": 0.275868,
+   "betweenesscentrality": 0.008475,
+   "degree": 3
+ },
+ {
+   "id": "1963 Illegal Arms Sales",
+   "label": "1963 Illegal Arms Sales",
+   "modularity_class": 2,
+   "eigencentrality": 0.010271,
+   "eccentricity": 8,
+   "closnesscentrality": 0.197821,
+   "harmonicclosnesscentrality": 0.212904,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Dearborn Independent/The International Jew",
+   "label": "Dearborn Independent/The International Jew",
+   "modularity_class": 4,
+   "eigencentrality": 0.0366,
+   "eccentricity": 7,
+   "closnesscentrality": 0.225837,
+   "harmonicclosnesscentrality": 0.254933,
+   "betweenesscentrality": 0.020206,
+   "degree": 4
+ },
+ {
+   "id": "Silver Shirts",
+   "label": "Silver Shirts",
+   "modularity_class": 8,
+   "eigencentrality": 0.040363,
+   "eccentricity": 7,
+   "closnesscentrality": 0.234592,
+   "harmonicclosnesscentrality": 0.262561,
+   "betweenesscentrality": 0.001845,
+   "degree": 3
+ },
+ {
+   "id": "Gordon Kahl",
+   "label": "Gordon Kahl",
+   "modularity_class": 5,
+   "eigencentrality": 0.118057,
+   "eccentricity": 7,
+   "closnesscentrality": 0.288509,
+   "harmonicclosnesscentrality": 0.323598,
+   "betweenesscentrality": 0.02437,
+   "degree": 5
+ },
+ {
+   "id": "Richard Wayne Snell",
+   "label": "Richard Wayne Snell",
+   "modularity_class": 5,
+   "eigencentrality": 0.165874,
+   "eccentricity": 7,
+   "closnesscentrality": 0.281959,
+   "harmonicclosnesscentrality": 0.326947,
+   "betweenesscentrality": 0.038494,
+   "degree": 9
+ },
+ {
+   "id": "Neuman Britton",
+   "label": "Neuman Britton",
+   "modularity_class": 2,
+   "eigencentrality": 0.322273,
+   "eccentricity": 6,
+   "closnesscentrality": 0.322404,
+   "harmonicclosnesscentrality": 0.363206,
+   "betweenesscentrality": 0.029138,
+   "degree": 6
+ },
+ {
+   "id": "1983 Shootout with FBI",
+   "label": "1983 Shootout with FBI",
+   "modularity_class": 5,
+   "eigencentrality": 0.014866,
+   "eccentricity": 8,
+   "closnesscentrality": 0.224122,
+   "harmonicclosnesscentrality": 0.240194,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Henry Ford",
+   "label": "Henry Ford",
+   "modularity_class": 4,
+   "eigencentrality": 0.012743,
+   "eccentricity": 8,
+   "closnesscentrality": 0.185681,
+   "harmonicclosnesscentrality": 0.204646,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Howard Rand",
+   "label": "Howard Rand",
+   "modularity_class": 4,
+   "eigencentrality": 0.015397,
+   "eccentricity": 8,
+   "closnesscentrality": 0.206114,
+   "harmonicclosnesscentrality": 0.228092,
+   "betweenesscentrality": 0.008117,
+   "degree": 3
+ },
+ {
+   "id": "Anglo-Saxon Federation of America",
+   "label": "Anglo-Saxon Federation of America",
+   "modularity_class": 4,
+   "eigencentrality": 0.010078,
+   "eccentricity": 9,
+   "closnesscentrality": 0.172389,
+   "harmonicclosnesscentrality": 0.190498,
+   "betweenesscentrality": 0.000766,
+   "degree": 2
+ },
+ {
+   "id": "Tennessee KKK",
+   "label": "Tennessee KKK",
+   "modularity_class": 2,
+   "eigencentrality": 0.091065,
+   "eccentricity": 8,
+   "closnesscentrality": 0.233895,
+   "harmonicclosnesscentrality": 0.26417,
+   "betweenesscentrality": 0.000018,
+   "degree": 3
+ },
+ {
+   "id": "Bethel Baptist Church Bombing",
+   "label": "Bethel Baptist Church Bombing",
+   "modularity_class": 2,
+   "eigencentrality": 0.051638,
+   "eccentricity": 8,
+   "closnesscentrality": 0.226705,
+   "harmonicclosnesscentrality": 0.252174,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Confederate Underground",
+   "label": "Confederate Underground",
+   "modularity_class": 2,
+   "eigencentrality": 0.084677,
+   "eccentricity": 8,
+   "closnesscentrality": 0.234592,
+   "harmonicclosnesscentrality": 0.264523,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "1964-1967 MLK Assassination Attempts",
+   "label": "1964-1967 MLK Assassination Attempts",
+   "modularity_class": 2,
+   "eigencentrality": 0.298947,
+   "eccentricity": 8,
+   "closnesscentrality": 0.257923,
+   "harmonicclosnesscentrality": 0.302941,
+   "betweenesscentrality": 0.001222,
+   "degree": 8
+ },
+ {
+   "id": "Jack Brown",
+   "label": "Jack Brown",
+   "modularity_class": 2,
+   "eigencentrality": 0.173486,
+   "eccentricity": 8,
+   "closnesscentrality": 0.270642,
+   "harmonicclosnesscentrality": 0.31078,
+   "betweenesscentrality": 0.003174,
+   "degree": 3
+ },
+ {
+   "id": "Scriptures for America",
+   "label": "Scriptures for America",
+   "modularity_class": 0,
+   "eigencentrality": 0.087944,
+   "eccentricity": 6,
+   "closnesscentrality": 0.279621,
+   "harmonicclosnesscentrality": 0.309816,
+   "betweenesscentrality": 0.012281,
+   "degree": 5
+ },
+ {
+   "id": "James \"Bo\" Gritz",
+   "label": "James \"Bo\" Gritz",
+   "modularity_class": 6,
+   "eigencentrality": 0.11353,
+   "eccentricity": 6,
+   "closnesscentrality": 0.284337,
+   "harmonicclosnesscentrality": 0.322175,
+   "betweenesscentrality": 0.024591,
+   "degree": 8
+ },
+ {
+   "id": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "label": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "modularity_class": 6,
+   "eigencentrality": 0.148398,
+   "eccentricity": 6,
+   "closnesscentrality": 0.302177,
+   "harmonicclosnesscentrality": 0.337147,
+   "betweenesscentrality": 0.028265,
+   "degree": 7
+ },
+ {
+   "id": "James Forester",
+   "label": "James Forester",
+   "modularity_class": 8,
+   "eigencentrality": 0.01794,
+   "eccentricity": 7,
+   "closnesscentrality": 0.217512,
+   "harmonicclosnesscentrality": 0.237762,
+   "betweenesscentrality": 0.000706,
+   "degree": 2
+ },
+ {
+   "id": "Unity Now",
+   "label": "Unity Now",
+   "modularity_class": 3,
+   "eigencentrality": 0.038802,
+   "eccentricity": 8,
+   "closnesscentrality": 0.249735,
+   "harmonicclosnesscentrality": 0.275469,
+   "betweenesscentrality": 0.004856,
+   "degree": 4
+ },
+ {
+   "id": "Ministry of Christ Church",
+   "label": "Ministry of Christ Church",
+   "modularity_class": 8,
+   "eigencentrality": 0.094418,
+   "eccentricity": 7,
+   "closnesscentrality": 0.260198,
+   "harmonicclosnesscentrality": 0.293513,
+   "betweenesscentrality": 0.00538,
+   "degree": 3
+ },
+ {
+   "id": "James Haverkamp",
+   "label": "James Haverkamp",
+   "modularity_class": 8,
+   "eigencentrality": 0.057679,
+   "eccentricity": 7,
+   "closnesscentrality": 0.235294,
+   "harmonicclosnesscentrality": 0.26025,
+   "betweenesscentrality": 0.001097,
+   "degree": 3
+ },
+ {
+   "id": "James K. Warner",
+   "label": "James K. Warner",
+   "modularity_class": 1,
+   "eigencentrality": 0.353878,
+   "eccentricity": 6,
+   "closnesscentrality": 0.325069,
+   "harmonicclosnesscentrality": 0.375212,
+   "betweenesscentrality": 0.057251,
+   "degree": 10
+ },
+ {
+   "id": "Louis Beam",
+   "label": "Louis Beam",
+   "modularity_class": 6,
+   "eigencentrality": 0.231987,
+   "eccentricity": 6,
+   "closnesscentrality": 0.335227,
+   "harmonicclosnesscentrality": 0.375989,
+   "betweenesscentrality": 0.073581,
+   "degree": 10
+ },
+ {
+   "id": "James P. Thornton",
+   "label": "James P. Thornton",
+   "modularity_class": 2,
+   "eigencentrality": 0.333698,
+   "eccentricity": 7,
+   "closnesscentrality": 0.300254,
+   "harmonicclosnesscentrality": 0.34206,
+   "betweenesscentrality": 0.002479,
+   "degree": 6
+ },
+ {
+   "id": "James Thimm",
+   "label": "James Thimm",
+   "modularity_class": 8,
+   "eigencentrality": 0.049353,
+   "eccentricity": 7,
+   "closnesscentrality": 0.23506,
+   "harmonicclosnesscentrality": 0.258132,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "James Venable",
+   "label": "James Venable",
+   "modularity_class": 2,
+   "eigencentrality": 0.30499,
+   "eccentricity": 8,
+   "closnesscentrality": 0.276995,
+   "harmonicclosnesscentrality": 0.32561,
+   "betweenesscentrality": 0.008578,
+   "degree": 8
+ },
+ {
+   "id": "James Wickstrom",
+   "label": "James Wickstrom",
+   "modularity_class": 8,
+   "eigencentrality": 0.196999,
+   "eccentricity": 6,
+   "closnesscentrality": 0.296855,
+   "harmonicclosnesscentrality": 0.339901,
+   "betweenesscentrality": 0.031178,
+   "degree": 8
+ },
+ {
+   "id": "Jean Craig",
+   "label": "Jean Craig",
+   "modularity_class": 0,
+   "eigencentrality": 0.039275,
+   "eccentricity": 8,
+   "closnesscentrality": 0.210714,
+   "harmonicclosnesscentrality": 0.236274,
+   "betweenesscentrality": 0.000138,
+   "degree": 2
+ },
+ {
+   "id": "Jim Ellison",
+   "label": "Jim Ellison",
+   "modularity_class": 5,
+   "eigencentrality": 0.177062,
+   "eccentricity": 6,
+   "closnesscentrality": 0.287105,
+   "harmonicclosnesscentrality": 0.331638,
+   "betweenesscentrality": 0.034687,
+   "degree": 9
+ },
+ {
+   "id": "Robert G. Millar",
+   "label": "Robert G. Millar",
+   "modularity_class": 5,
+   "eigencentrality": 0.115218,
+   "eccentricity": 7,
+   "closnesscentrality": 0.244306,
+   "harmonicclosnesscentrality": 0.283676,
+   "betweenesscentrality": 0.005143,
+   "degree": 5
+ },
+ {
+   "id": "Joe Daniel (Danny Joe) Hawkins",
+   "label": "Joe Daniel (Danny Joe) Hawkins",
+   "modularity_class": 2,
+   "eigencentrality": 0.128573,
+   "eccentricity": 8,
+   "closnesscentrality": 0.245833,
+   "harmonicclosnesscentrality": 0.277164,
+   "betweenesscentrality": 0.000335,
+   "degree": 3
+ },
+ {
+   "id": "John Kasper",
+   "label": "John Kasper",
+   "modularity_class": 2,
+   "eigencentrality": 0.222394,
+   "eccentricity": 8,
+   "closnesscentrality": 0.280285,
+   "harmonicclosnesscentrality": 0.320949,
+   "betweenesscentrality": 0.00398,
+   "degree": 4
+ },
+ {
+   "id": "John Shults",
+   "label": "John Shults",
+   "modularity_class": 1,
+   "eigencentrality": 0.10744,
+   "eccentricity": 8,
+   "closnesscentrality": 0.233895,
+   "harmonicclosnesscentrality": 0.270294,
+   "betweenesscentrality": 0,
+   "degree": 4
+ },
+ {
+   "id": "John Trochmann",
+   "label": "John Trochmann",
+   "modularity_class": 6,
+   "eigencentrality": 0.105487,
+   "eccentricity": 7,
+   "closnesscentrality": 0.271889,
+   "harmonicclosnesscentrality": 0.306396,
+   "betweenesscentrality": 0.018951,
+   "degree": 6
+ },
+ {
+   "id": "Randy Weaver",
+   "label": "Randy Weaver",
+   "modularity_class": 6,
+   "eigencentrality": 0.082854,
+   "eccentricity": 7,
+   "closnesscentrality": 0.270332,
+   "harmonicclosnesscentrality": 0.298981,
+   "betweenesscentrality": 0.001045,
+   "degree": 3
+ },
+ {
+   "id": "Ruby Ridge",
+   "label": "Ruby Ridge",
+   "modularity_class": 6,
+   "eigencentrality": 0.085233,
+   "eccentricity": 7,
+   "closnesscentrality": 0.259626,
+   "harmonicclosnesscentrality": 0.296973,
+   "betweenesscentrality": 0.010133,
+   "degree": 5
+ },
+ {
+   "id": "Joseph Milteer",
+   "label": "Joseph Milteer",
+   "modularity_class": 2,
+   "eigencentrality": 0.224951,
+   "eccentricity": 8,
+   "closnesscentrality": 0.273465,
+   "harmonicclosnesscentrality": 0.31304,
+   "betweenesscentrality": 0.000947,
+   "degree": 4
+ },
+ {
+   "id": "Kathy Ainsworth",
+   "label": "Kathy Ainsworth",
+   "modularity_class": 2,
+   "eigencentrality": 0.317684,
+   "eccentricity": 8,
+   "closnesscentrality": 0.270642,
+   "harmonicclosnesscentrality": 0.31537,
+   "betweenesscentrality": 0.000326,
+   "degree": 6
+ },
+ {
+   "id": "Keith Gilbert",
+   "label": "Keith Gilbert",
+   "modularity_class": 2,
+   "eigencentrality": 0.226908,
+   "eccentricity": 7,
+   "closnesscentrality": 0.283313,
+   "harmonicclosnesscentrality": 0.321439,
+   "betweenesscentrality": 0.003047,
+   "degree": 4
+ },
+ {
+   "id": "Ken Loff",
+   "label": "Ken Loff",
+   "modularity_class": 0,
+   "eigencentrality": 0.073537,
+   "eccentricity": 7,
+   "closnesscentrality": 0.231146,
+   "harmonicclosnesscentrality": 0.258182,
+   "betweenesscentrality": 0.000101,
+   "degree": 2
+ },
+ {
+   "id": "Kenneth Goff",
+   "label": "Kenneth Goff",
+   "modularity_class": 2,
+   "eigencentrality": 0.138996,
+   "eccentricity": 8,
+   "closnesscentrality": 0.266968,
+   "harmonicclosnesscentrality": 0.301811,
+   "betweenesscentrality": 0.000417,
+   "degree": 2
+ },
+ {
+   "id": "Kevin McCarthy",
+   "label": "Kevin McCarthy",
+   "modularity_class": 1,
+   "eigencentrality": 0.122517,
+   "eccentricity": 8,
+   "closnesscentrality": 0.242798,
+   "harmonicclosnesscentrality": 0.281522,
+   "betweenesscentrality": 0.002668,
+   "degree": 6
+ },
+ {
+   "id": "Mark Thomas",
+   "label": "Mark Thomas",
+   "modularity_class": 1,
+   "eigencentrality": 0.117099,
+   "eccentricity": 7,
+   "closnesscentrality": 0.27896,
+   "harmonicclosnesscentrality": 0.311552,
+   "betweenesscentrality": 0.009223,
+   "degree": 4
+ },
+ {
+   "id": "Kingdom Identity Ministries",
+   "label": "Kingdom Identity Ministries",
+   "modularity_class": 2,
+   "eigencentrality": 0.121308,
+   "eccentricity": 8,
+   "closnesscentrality": 0.262806,
+   "harmonicclosnesscentrality": 0.299632,
+   "betweenesscentrality": 0.004893,
+   "degree": 3
+ },
+ {
+   "id": "Mike Hallimore",
+   "label": "Mike Hallimore",
+   "modularity_class": 2,
+   "eigencentrality": 0.036152,
+   "eccentricity": 7,
+   "closnesscentrality": 0.242798,
+   "harmonicclosnesscentrality": 0.265698,
+   "betweenesscentrality": 0.001845,
+   "degree": 2
+ },
+ {
+   "id": "Kirk Lyons",
+   "label": "Kirk Lyons",
+   "modularity_class": 6,
+   "eigencentrality": 0.215914,
+   "eccentricity": 6,
+   "closnesscentrality": 0.318489,
+   "harmonicclosnesscentrality": 0.355367,
+   "betweenesscentrality": 0.02141,
+   "degree": 8
+ },
+ {
+   "id": "National Alliance",
+   "label": "National Alliance",
+   "modularity_class": 6,
+   "eigencentrality": 0.127148,
+   "eccentricity": 7,
+   "closnesscentrality": 0.287805,
+   "harmonicclosnesscentrality": 0.322851,
+   "betweenesscentrality": 0.009394,
+   "degree": 5
+ },
+ {
+   "id": "Institute for Historical Review",
+   "label": "Institute for Historical Review",
+   "modularity_class": 6,
+   "eigencentrality": 0.031465,
+   "eccentricity": 7,
+   "closnesscentrality": 0.244306,
+   "harmonicclosnesscentrality": 0.263812,
+   "betweenesscentrality": 0.001509,
+   "degree": 2
+ },
+ {
+   "id": "L.E. Matthews",
+   "label": "L.E. Matthews",
+   "modularity_class": 2,
+   "eigencentrality": 0.264288,
+   "eccentricity": 8,
+   "closnesscentrality": 0.257361,
+   "harmonicclosnesscentrality": 0.298704,
+   "betweenesscentrality": 0.000502,
+   "degree": 6
+ },
+ {
+   "id": "Larry Pratt",
+   "label": "Larry Pratt",
+   "modularity_class": 6,
+   "eigencentrality": 0.02053,
+   "eccentricity": 7,
+   "closnesscentrality": 0.232742,
+   "harmonicclosnesscentrality": 0.250111,
+   "betweenesscentrality": 0.008475,
+   "degree": 2
+ },
+ {
+   "id": "Gun Owners of America",
+   "label": "Gun Owners of America",
+   "modularity_class": 6,
+   "eigencentrality": 0.003876,
+   "eccentricity": 8,
+   "closnesscentrality": 0.188951,
+   "harmonicclosnesscentrality": 0.198744,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Larry Steven McQuilliams",
+   "label": "Larry Steven McQuilliams",
+   "modularity_class": 7,
+   "eigencentrality": 0.023969,
+   "eccentricity": 8,
+   "closnesscentrality": 0.219739,
+   "harmonicclosnesscentrality": 0.242781,
+   "betweenesscentrality": 0.008475,
+   "degree": 3
+ },
+ {
+   "id": "Mexican Consulate Shooting Austin TX",
+   "label": "Mexican Consulate Shooting Austin TX",
+   "modularity_class": 7,
+   "eigencentrality": 0.004954,
+   "eccentricity": 9,
+   "closnesscentrality": 0.18029,
+   "harmonicclosnesscentrality": 0.192551,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Leaderless Resistance",
+   "label": "Leaderless Resistance",
+   "modularity_class": 6,
+   "eigencentrality": 0.083335,
+   "eccentricity": 7,
+   "closnesscentrality": 0.280618,
+   "harmonicclosnesscentrality": 0.314205,
+   "betweenesscentrality": 0.03187,
+   "degree": 5
+ },
+ {
+   "id": "Pete Peters",
+   "label": "Pete Peters",
+   "modularity_class": 0,
+   "eigencentrality": 0.076134,
+   "eccentricity": 7,
+   "closnesscentrality": 0.274419,
+   "harmonicclosnesscentrality": 0.304772,
+   "betweenesscentrality": 0.011014,
+   "degree": 6
+ },
+ {
+   "id": "United Klans of America (UKA)",
+   "label": "United Klans of America (UKA)",
+   "modularity_class": 3,
+   "eigencentrality": 0.050478,
+   "eccentricity": 7,
+   "closnesscentrality": 0.263687,
+   "harmonicclosnesscentrality": 0.289982,
+   "betweenesscentrality": 0.014106,
+   "degree": 3
+ },
+ {
+   "id": "Richard \"Wild Bill\" Guthrie",
+   "label": "Richard \"Wild Bill\" Guthrie",
+   "modularity_class": 1,
+   "eigencentrality": 0.160948,
+   "eccentricity": 7,
+   "closnesscentrality": 0.28468,
+   "harmonicclosnesscentrality": 0.326735,
+   "betweenesscentrality": 0.022848,
+   "degree": 7
+ },
+ {
+   "id": "Michael Fortier",
+   "label": "Michael Fortier",
+   "modularity_class": 1,
+   "eigencentrality": 0.054688,
+   "eccentricity": 8,
+   "closnesscentrality": 0.220355,
+   "harmonicclosnesscentrality": 0.248956,
+   "betweenesscentrality": 0,
+   "degree": 3
+ },
+ {
+   "id": "Oklahoma City Bombing",
+   "label": "Oklahoma City Bombing",
+   "modularity_class": 1,
+   "eigencentrality": 0.054688,
+   "eccentricity": 8,
+   "closnesscentrality": 0.220355,
+   "harmonicclosnesscentrality": 0.248956,
+   "betweenesscentrality": 0,
+   "degree": 3
+ },
+ {
+   "id": "Mike Beach",
+   "label": "Mike Beach",
+   "modularity_class": 8,
+   "eigencentrality": 0.10198,
+   "eccentricity": 7,
+   "closnesscentrality": 0.264574,
+   "harmonicclosnesscentrality": 0.300151,
+   "betweenesscentrality": 0.012266,
+   "degree": 4
+ },
+ {
+   "id": "William Dudley Pelley",
+   "label": "William Dudley Pelley",
+   "modularity_class": 8,
+   "eigencentrality": 0.025758,
+   "eccentricity": 7,
+   "closnesscentrality": 0.216912,
+   "harmonicclosnesscentrality": 0.241414,
+   "betweenesscentrality": 0.003142,
+   "degree": 3
+ },
+ {
+   "id": "1968 firearms violations, bank robberies",
+   "label": "1968 firearms violations, bank robberies",
+   "modularity_class": 2,
+   "eigencentrality": 0.044858,
+   "eccentricity": 8,
+   "closnesscentrality": 0.216713,
+   "harmonicclosnesscentrality": 0.242327,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Montana Freemen",
+   "label": "Montana Freemen",
+   "modularity_class": 8,
+   "eigencentrality": 0.092562,
+   "eccentricity": 7,
+   "closnesscentrality": 0.266366,
+   "harmonicclosnesscentrality": 0.296267,
+   "betweenesscentrality": 0.002464,
+   "degree": 3
+ },
+ {
+   "id": "Northpoint Tactical Teams Compound",
+   "label": "Northpoint Tactical Teams Compound",
+   "modularity_class": 9,
+   "eigencentrality": 0.00239,
+   "eccentricity": 9,
+   "closnesscentrality": 0.147962,
+   "harmonicclosnesscentrality": 0.157057,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Oren Potito",
+   "label": "Oren Potito",
+   "modularity_class": 2,
+   "eigencentrality": 0.215752,
+   "eccentricity": 7,
+   "closnesscentrality": 0.285714,
+   "harmonicclosnesscentrality": 0.320591,
+   "betweenesscentrality": 0.000425,
+   "degree": 3
+ },
+ {
+   "id": "Peter Langan",
+   "label": "Peter Langan",
+   "modularity_class": 1,
+   "eigencentrality": 0.087031,
+   "eccentricity": 7,
+   "closnesscentrality": 0.257642,
+   "harmonicclosnesscentrality": 0.288327,
+   "betweenesscentrality": 0.002698,
+   "degree": 4
+ },
+ {
+   "id": "Randall Evans",
+   "label": "Randall Evans",
+   "modularity_class": 0,
+   "eigencentrality": 0.120143,
+   "eccentricity": 7,
+   "closnesscentrality": 0.2316,
+   "harmonicclosnesscentrality": 0.261007,
+   "betweenesscentrality": 0.000443,
+   "degree": 4
+ },
+ {
+   "id": "Randall Radar",
+   "label": "Randall Radar",
+   "modularity_class": 5,
+   "eigencentrality": 0.111526,
+   "eccentricity": 7,
+   "closnesscentrality": 0.266065,
+   "harmonicclosnesscentrality": 0.302341,
+   "betweenesscentrality": 0.003325,
+   "degree": 4
+ },
+ {
+   "id": "Randolph Duey",
+   "label": "Randolph Duey",
+   "modularity_class": 0,
+   "eigencentrality": 0.152418,
+   "eccentricity": 7,
+   "closnesscentrality": 0.272517,
+   "harmonicclosnesscentrality": 0.309433,
+   "betweenesscentrality": 0.011379,
+   "degree": 5
+ },
+ {
+   "id": "Murder of Walter West",
+   "label": "Murder of Walter West",
+   "modularity_class": 0,
+   "eigencentrality": 0.031393,
+   "eccentricity": 8,
+   "closnesscentrality": 0.214741,
+   "harmonicclosnesscentrality": 0.234145,
+   "betweenesscentrality": 0.000068,
+   "degree": 2
+ },
+ {
+   "id": "Arkansas Knights of the KKK",
+   "label": "Arkansas Knights of the KKK",
+   "modularity_class": 1,
+   "eigencentrality": 0.068036,
+   "eccentricity": 7,
+   "closnesscentrality": 0.246604,
+   "harmonicclosnesscentrality": 0.277199,
+   "betweenesscentrality": 0.000165,
+   "degree": 3
+ },
+ {
+   "id": "Richard Bertollini",
+   "label": "Richard Bertollini",
+   "modularity_class": 6,
+   "eigencentrality": 0.074418,
+   "eccentricity": 6,
+   "closnesscentrality": 0.269099,
+   "harmonicclosnesscentrality": 0.29315,
+   "betweenesscentrality": 0.001948,
+   "degree": 2
+ },
+ {
+   "id": "Richard Kemp",
+   "label": "Richard Kemp",
+   "modularity_class": 0,
+   "eigencentrality": 0.095607,
+   "eccentricity": 7,
+   "closnesscentrality": 0.232055,
+   "harmonicclosnesscentrality": 0.263832,
+   "betweenesscentrality": 0.001683,
+   "degree": 4
+ },
+ {
+   "id": "Richard Scott McIntosh",
+   "label": "Richard Scott McIntosh",
+   "modularity_class": 7,
+   "eigencentrality": 0.016981,
+   "eccentricity": 8,
+   "closnesscentrality": 0.211091,
+   "harmonicclosnesscentrality": 0.23242,
+   "betweenesscentrality": 0.004219,
+   "degree": 2
+ },
+ {
+   "id": "1992 OK Bank Robberies",
+   "label": "1992 OK Bank Robberies",
+   "modularity_class": 7,
+   "eigencentrality": 0.007699,
+   "eccentricity": 9,
+   "closnesscentrality": 0.174685,
+   "harmonicclosnesscentrality": 0.189212,
+   "betweenesscentrality": 0.000018,
+   "degree": 2
+ },
+ {
+   "id": "Richard Scutari",
+   "label": "Richard Scutari",
+   "modularity_class": 0,
+   "eigencentrality": 0.145364,
+   "eccentricity": 7,
+   "closnesscentrality": 0.263099,
+   "harmonicclosnesscentrality": 0.298487,
+   "betweenesscentrality": 0.003269,
+   "degree": 5
+ },
+ {
+   "id": "1983 Failed Pipeline Bomb Plot",
+   "label": "1983 Failed Pipeline Bomb Plot",
+   "modularity_class": 5,
+   "eigencentrality": 0.033762,
+   "eccentricity": 8,
+   "closnesscentrality": 0.221388,
+   "harmonicclosnesscentrality": 0.246545,
+   "betweenesscentrality": 0.0006,
+   "degree": 3
+ },
+ {
+   "id": "Murder of Arkansas State Trooper, Texarkana Pawnshop Murder",
+   "label": "Murder of Arkansas State Trooper, Texarkana Pawnshop Murder",
+   "modularity_class": 5,
+   "eigencentrality": 0.021633,
+   "eccentricity": 8,
+   "closnesscentrality": 0.220149,
+   "harmonicclosnesscentrality": 0.239482,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Rick Stice",
+   "label": "Rick Stice",
+   "modularity_class": 8,
+   "eigencentrality": 0.049353,
+   "eccentricity": 7,
+   "closnesscentrality": 0.23506,
+   "harmonicclosnesscentrality": 0.258132,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Robert \"Dynamite Bob\" Chambliss",
+   "label": "Robert \"Dynamite Bob\" Chambliss",
+   "modularity_class": 3,
+   "eigencentrality": 0.104994,
+   "eccentricity": 8,
+   "closnesscentrality": 0.236,
+   "harmonicclosnesscentrality": 0.271091,
+   "betweenesscentrality": 0.002404,
+   "degree": 4
+ },
+ {
+   "id": "Robert Bolivar DePugh",
+   "label": "Robert Bolivar DePugh",
+   "modularity_class": 2,
+   "eigencentrality": 0.097433,
+   "eccentricity": 8,
+   "closnesscentrality": 0.238866,
+   "harmonicclosnesscentrality": 0.269819,
+   "betweenesscentrality": 0.001009,
+   "degree": 4
+ },
+ {
+   "id": "Robert E. Miles",
+   "label": "Robert E. Miles",
+   "modularity_class": 3,
+   "eigencentrality": 0.071222,
+   "eccentricity": 7,
+   "closnesscentrality": 0.269714,
+   "harmonicclosnesscentrality": 0.299899,
+   "betweenesscentrality": 0.013888,
+   "degree": 5
+ },
+ {
+   "id": "Roy Frankhouser",
+   "label": "Roy Frankhouser",
+   "modularity_class": 3,
+   "eigencentrality": 0.155402,
+   "eccentricity": 8,
+   "closnesscentrality": 0.276995,
+   "harmonicclosnesscentrality": 0.317701,
+   "betweenesscentrality": 0.010087,
+   "degree": 4
+ },
+ {
+   "id": "1971 School Bus bombings",
+   "label": "1971 School Bus bombings",
+   "modularity_class": 3,
+   "eigencentrality": 0.010023,
+   "eccentricity": 8,
+   "closnesscentrality": 0.212613,
+   "harmonicclosnesscentrality": 0.226841,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Robert Merki",
+   "label": "Robert Merki",
+   "modularity_class": 0,
+   "eigencentrality": 0.102184,
+   "eccentricity": 7,
+   "closnesscentrality": 0.237425,
+   "harmonicclosnesscentrality": 0.270178,
+   "betweenesscentrality": 0.001218,
+   "degree": 4
+ },
+ {
+   "id": "Robert S. Berry",
+   "label": "Robert S. Berry",
+   "modularity_class": 7,
+   "eigencentrality": 0.028245,
+   "eccentricity": 8,
+   "closnesscentrality": 0.211849,
+   "harmonicclosnesscentrality": 0.23807,
+   "betweenesscentrality": 0.003125,
+   "degree": 4
+ },
+ {
+   "id": "S.J. Capt",
+   "label": "S.J. Capt",
+   "modularity_class": 2,
+   "eigencentrality": 0.087192,
+   "eccentricity": 7,
+   "closnesscentrality": 0.255135,
+   "harmonicclosnesscentrality": 0.282042,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Congress of Freedom",
+   "label": "Congress of Freedom",
+   "modularity_class": 2,
+   "eigencentrality": 0.157055,
+   "eccentricity": 8,
+   "closnesscentrality": 0.263393,
+   "harmonicclosnesscentrality": 0.299985,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Murder of Vernon Dahmer",
+   "label": "Murder of Vernon Dahmer",
+   "modularity_class": 2,
+   "eigencentrality": 0.094571,
+   "eccentricity": 8,
+   "closnesscentrality": 0.230469,
+   "harmonicclosnesscentrality": 0.259014,
+   "betweenesscentrality": 0,
+   "degree": 2
+ },
+ {
+   "id": "Sharon Merki",
+   "label": "Sharon Merki",
+   "modularity_class": 0,
+   "eigencentrality": 0.085043,
+   "eccentricity": 7,
+   "closnesscentrality": 0.236948,
+   "harmonicclosnesscentrality": 0.267353,
+   "betweenesscentrality": 0.000703,
+   "degree": 3
+ },
+ {
+   "id": "Shawn Kenny",
+   "label": "Shawn Kenny",
+   "modularity_class": 1,
+   "eigencentrality": 0.02369,
+   "eccentricity": 9,
+   "closnesscentrality": 0.207564,
+   "harmonicclosnesscentrality": 0.229864,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Lord's Covenant Church",
+   "label": "Lord's Covenant Church",
+   "modularity_class": 6,
+   "eigencentrality": 0.005658,
+   "eccentricity": 9,
+   "closnesscentrality": 0.188348,
+   "harmonicclosnesscentrality": 0.2004,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Terry L. Nichols",
+   "label": "Terry L. Nichols",
+   "modularity_class": 1,
+   "eigencentrality": 0.09583,
+   "eccentricity": 8,
+   "closnesscentrality": 0.230469,
+   "harmonicclosnesscentrality": 0.268014,
+   "betweenesscentrality": 0.001293,
+   "degree": 5
+ },
+ {
+   "id": "Timothy Haverkamp",
+   "label": "Timothy Haverkamp",
+   "modularity_class": 8,
+   "eigencentrality": 0.057679,
+   "eccentricity": 7,
+   "closnesscentrality": 0.235294,
+   "harmonicclosnesscentrality": 0.26025,
+   "betweenesscentrality": 0.001097,
+   "degree": 3
+ },
+ {
+   "id": "William Luther Pierce",
+   "label": "William Luther Pierce",
+   "modularity_class": 6,
+   "eigencentrality": 0.128047,
+   "eccentricity": 7,
+   "closnesscentrality": 0.287454,
+   "harmonicclosnesscentrality": 0.326816,
+   "betweenesscentrality": 0.038248,
+   "degree": 5
+ },
+ {
+   "id": "Civilian Military Resistance (CMA)",
+   "label": "Civilian Military Resistance (CMA)",
+   "modularity_class": 1,
+   "eigencentrality": 0.033465,
+   "eccentricity": 8,
+   "closnesscentrality": 0.219944,
+   "harmonicclosnesscentrality": 0.244719,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Tommy Blanton",
+   "label": "Tommy Blanton",
+   "modularity_class": 3,
+   "eigencentrality": 0.053356,
+   "eccentricity": 8,
+   "closnesscentrality": 0.228019,
+   "harmonicclosnesscentrality": 0.255413,
+   "betweenesscentrality": 0.00108,
+   "degree": 3
+ },
+ {
+   "id": "Wally Peyson",
+   "label": "Wally Peyson",
+   "modularity_class": 2,
+   "eigencentrality": 0.206623,
+   "eccentricity": 7,
+   "closnesscentrality": 0.281959,
+   "harmonicclosnesscentrality": 0.318967,
+   "betweenesscentrality": 0.00488,
+   "degree": 4
+ },
+ {
+   "id": "Walter Eliyah Thody",
+   "label": "Walter Eliyah Thody",
+   "modularity_class": 7,
+   "eigencentrality": 0.016981,
+   "eccentricity": 8,
+   "closnesscentrality": 0.211091,
+   "harmonicclosnesscentrality": 0.23242,
+   "betweenesscentrality": 0.004219,
+   "degree": 2
+ },
+ {
+   "id": "The Covenant People",
+   "label": "The Covenant People",
+   "modularity_class": 4,
+   "eigencentrality": 0.006172,
+   "eccentricity": 9,
+   "closnesscentrality": 0.159892,
+   "harmonicclosnesscentrality": 0.174469,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "National Youth Alliance",
+   "label": "National Youth Alliance",
+   "modularity_class": 6,
+   "eigencentrality": 0.021705,
+   "eccentricity": 8,
+   "closnesscentrality": 0.230244,
+   "harmonicclosnesscentrality": 0.252189,
+   "betweenesscentrality": 0.001569,
+   "degree": 2
+ },
+ {
+   "id": "William Thomas",
+   "label": "William Thomas",
+   "modularity_class": 5,
+   "eigencentrality": 0.041842,
+   "eccentricity": 7,
+   "closnesscentrality": 0.222013,
+   "harmonicclosnesscentrality": 0.249031,
+   "betweenesscentrality": 0.001174,
+   "degree": 4
+ },
+ {
+   "id": "1983 Beth Shalom Firebombing",
+   "label": "1983 Beth Shalom Firebombing",
+   "modularity_class": 5,
+   "eigencentrality": 0.029739,
+   "eccentricity": 7,
+   "closnesscentrality": 0.223909,
+   "harmonicclosnesscentrality": 0.245753,
+   "betweenesscentrality": 0.000218,
+   "degree": 2
+ },
+ {
+   "id": "Steven Scott",
+   "label": "Steven Scott",
+   "modularity_class": 5,
+   "eigencentrality": 0.031947,
+   "eccentricity": 7,
+   "closnesscentrality": 0.221181,
+   "harmonicclosnesscentrality": 0.243382,
+   "betweenesscentrality": 0.000376,
+   "degree": 2
+ },
+ {
+   "id": "William V. Fowler",
+   "label": "William V. Fowler",
+   "modularity_class": 2,
+   "eigencentrality": 0.172386,
+   "eccentricity": 7,
+   "closnesscentrality": 0.27929,
+   "harmonicclosnesscentrality": 0.313105,
+   "betweenesscentrality": 0.002945,
+   "degree": 3
+ },
+ {
+   "id": "Willie Ray Lampley",
+   "label": "Willie Ray Lampley",
+   "modularity_class": 1,
+   "eigencentrality": 0.083869,
+   "eccentricity": 8,
+   "closnesscentrality": 0.234359,
+   "harmonicclosnesscentrality": 0.270657,
+   "betweenesscentrality": 0.009427,
+   "degree": 5
+ },
+ {
+   "id": "November 1995 Bombing Plot",
+   "label": "November 1995 Bombing Plot",
+   "modularity_class": 1,
+   "eigencentrality": 0.011791,
+   "eccentricity": 9,
+   "closnesscentrality": 0.190016,
+   "harmonicclosnesscentrality": 0.20771,
+   "betweenesscentrality": 0,
+   "degree": 1
+ },
+ {
+   "id": "Willis Carto",
+   "label": "Willis Carto",
+   "modularity_class": 6,
+   "eigencentrality": 0.031112,
+   "eccentricity": 7,
+   "closnesscentrality": 0.227141,
+   "harmonicclosnesscentrality": 0.251513,
+   "betweenesscentrality": 0.00225,
+   "degree": 4
+ },
+ {
+   "id": "1983 Metropolitan Community Church Fire",
+   "label": "1983 Metropolitan Community Church Fire",
+   "modularity_class": 5,
+   "eigencentrality": 0.029739,
+   "eccentricity": 7,
+   "closnesscentrality": 0.223909,
+   "harmonicclosnesscentrality": 0.245753,
+   "betweenesscentrality": 0.000218,
+   "degree": 2
+ }
+],
+    "links": [
+ {
+   "source": "America's Promise Ministry",
+   "target": "Dave Barley",
+   "id": 0,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "American Agricultural Movement",
+   "target": "Posse Comitatus",
+   "id": 1,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Texas Light Infantry Brigade (TLIB)",
+   "id": 2,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Elohim City",
+   "id": 3,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Timothy McVeigh",
+   "id": 4,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Andreas Strassmeir",
+   "target": "Waco Siege",
+   "id": 5,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 6,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "Racketeering Conspiracy",
+   "id": 7,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "The Order",
+   "id": 8,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Andrew Barnhill",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 9,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Racketeering Conspiracy",
+   "id": 10,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "The Order",
+   "id": 11,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 12,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Posse Comitatus",
+   "id": 13,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ardie McBrearty",
+   "target": "Fort Smith sedition trial",
+   "id": 14,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Arizona Patriots",
+   "target": "Committee of the States",
+   "id": 15,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Arizona Patriots",
+   "target": "1986 Armored car bombing plot",
+   "id": 16,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Aryan Nations",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 17,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Aryan Nations",
+   "target": "Committee of the States",
+   "id": 18,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Aryan Republican Army (ARA)",
+   "target": "Vigilantes of Christiandom",
+   "id": 19,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Aryan Republican Army (ARA)",
+   "target": "1990s Bank Robberies",
+   "id": 20,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Aryan Republican Army (ARA)",
+   "target": "Turner Diaries",
+   "id": 21,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Benny Waldrup",
+   "target": "Swift Underground",
+   "id": 22,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Benny Waldrup",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 23,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Bertrand Comparet",
+   "target": "California Anti-Communist League",
+   "id": 24,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Bertrand Comparet",
+   "target": "Gerald L.K. Smith",
+   "id": 25,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Bertrand Comparet",
+   "target": "Christian Defense League",
+   "id": 26,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Bill Holt",
+   "target": "Eastview Klavern 13",
+   "id": 27,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Bill Holt",
+   "target": "Wesley Swift",
+   "id": 28,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Hallstrom",
+   "target": "America's Promise Ministry",
+   "id": 29,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Hallstrom",
+   "target": "Aryan Nations",
+   "id": 30,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Tommy Tarrants",
+   "id": 31,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Wesley Swift",
+   "id": 32,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "John Crommelin",
+   "id": 33,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Sidney Crockett Barnes",
+   "id": 34,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bob Smith",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 35,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Bobby Cherry",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 36,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Bobby Cherry",
+   "target": "Eastview Klavern 13",
+   "id": 37,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Brian J. Ratigan",
+   "target": "1996 Spokane Bombings",
+   "id": 38,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Brian J. Ratigan",
+   "target": "Phineas Priesthood",
+   "id": 39,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "British Israelism",
+   "target": "Gerald L.K. Smith",
+   "id": 40,
+   "weight": 3,
+   "decade": 1920
+ },
+ {
+   "source": "British Israelism",
+   "target": "William J. Cameron",
+   "id": 41,
+   "weight": 3,
+   "decade": 1920
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "The Order",
+   "id": 42,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Murder of Alan Berg",
+   "id": 43,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Fort Smith sedition trial",
+   "id": 44,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Racketeering Conspiracy",
+   "id": 45,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "Aryan Nations",
+   "id": 46,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Bruce Pierce",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 47,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "National Emancipation of our White Seed",
+   "id": 48,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Dan Gayman",
+   "id": 49,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Gerald L.K. Smith",
+   "id": 50,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Richard Girnt Butler",
+   "id": 51,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Buddy Tucker",
+   "target": "Byron de la Beckwith",
+   "id": 52,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "North Valley Jewish Community Center Shooting",
+   "id": 53,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "Aryan Nations",
+   "id": 54,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "Richard Kelly Hoskins",
+   "id": 55,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Buford Oneal Furrow",
+   "target": "America's Promise Ministry",
+   "id": 56,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "White Citizens Council",
+   "id": 57,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Phineas Priesthood",
+   "id": 58,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Murder of Medgar Evers",
+   "id": 59,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Sam Bowers",
+   "id": 60,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "J.B. Stoner",
+   "id": 61,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Byron de la Beckwith",
+   "target": "Scott Shepherd",
+   "id": 62,
+   "weight": 5,
+   "decade": 2000
+ },
+ {
+   "source": "California Knights of the KKK",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 63,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "California Rangers",
+   "target": "Minutemen",
+   "id": 64,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "1996 Spokane Bank Robbery",
+   "id": 65,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "1996 Spokane Abortion Clinic Bombing",
+   "id": 66,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "1996 Spokane Newspaper Bombing",
+   "id": 67,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Charles Barbee",
+   "target": "Phineas Priesthood",
+   "id": 68,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Elohim City",
+   "id": 69,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Andreas Strassmeir",
+   "id": 70,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Timothy McVeigh",
+   "id": 71,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 72,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Mueller Family Murders",
+   "id": 73,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Aryan Peoples Republic",
+   "id": 74,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Chevie Kehoe",
+   "target": "Michael Brescia",
+   "id": 75,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Christian Patriots Defense League",
+   "target": "William Potter Gale",
+   "id": 76,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Christian Patriots Defense League",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 77,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 78,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "J.B. Stoner",
+   "id": 79,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "Minutemen",
+   "id": 80,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Connie Lynch",
+   "target": "Sam Bowers",
+   "id": 81,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Conrad Gaard",
+   "target": "Christian Nationalist Crusade",
+   "id": 82,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Church of Israel",
+   "id": 83,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Aryan Nations",
+   "id": 84,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Jack Mohr",
+   "id": 85,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "John Harrell",
+   "id": 86,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 87,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "The Order",
+   "id": 88,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Dan Gayman",
+   "target": "Thomas Robb",
+   "id": 89,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Daniel Bauer",
+   "target": "Aryan Nations",
+   "id": 90,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Daniel Bauer",
+   "target": "The Order",
+   "id": 91,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Daniel Bauer",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 92,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Daniel Mahon",
+   "target": "Scottsdale Office of Diversity mail bombing",
+   "id": 93,
+   "weight": 5,
+   "decade": 2000
+ },
+ {
+   "source": "Daniel Mahon",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 94,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Danny Lee",
+   "target": "Elohim City",
+   "id": 95,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Danny Lee",
+   "target": "Aryan Peoples Republic",
+   "id": 96,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Dave Barley",
+   "target": "Sheldon Emry",
+   "id": 97,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Dave Barley",
+   "target": "Jay Merrell",
+   "id": 98,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "David Andreas",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 99,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Andreas",
+   "target": "Posse Comitatus",
+   "id": 100,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Andreas",
+   "target": "American Agricultural Movement",
+   "id": 101,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "David Andreas",
+   "target": "Michael Wayne Ryan",
+   "id": 102,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Duke",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 103,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "David Duke",
+   "target": "Tom Metzger",
+   "id": 104,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "David Duke",
+   "target": "Thomas Robb",
+   "id": 105,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "David Duke",
+   "target": "Populist Party",
+   "id": 106,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "David Duke",
+   "target": "New Christian Crusade Church",
+   "id": 107,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "David John Moran",
+   "target": "Committee of the States",
+   "id": 108,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "David John Moran",
+   "target": "1986 armed robberies",
+   "id": 109,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "The Order",
+   "id": 110,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Murder of Alan Berg",
+   "id": 111,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Fort Smith sedition trial",
+   "id": 112,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Church of LaPorte",
+   "id": 113,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Robert Mathews",
+   "id": 114,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Zillah Craig",
+   "id": 115,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "David Lane",
+   "target": "Racketeering Conspiracy",
+   "id": 116,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "The Order",
+   "id": 117,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "Murder of Missouri State Trooper",
+   "id": 118,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "Church of Israel",
+   "id": 119,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "David Tate",
+   "target": "Aryan Nations",
+   "id": 120,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "David Trochmann",
+   "target": "Militia of Montana",
+   "id": 121,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Debbi Mathews",
+   "target": "Robert Mathews",
+   "id": 122,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Debbi Mathews",
+   "target": "Buford Oneal Furrow",
+   "id": 123,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Scottsdale Office of Diversity mail bombing",
+   "id": 124,
+   "weight": 5,
+   "decade": 2000
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Daniel Mahon",
+   "id": 125,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 126,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Elohim City",
+   "id": 127,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Tom Metzger",
+   "id": 128,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Waco Siege",
+   "id": 129,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Turner Diaries",
+   "id": 130,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Dennis Mahon",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 131,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Dennis Mower",
+   "target": "Minutemen",
+   "id": 132,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Dennis Mower",
+   "target": "Wesley Swift",
+   "id": 133,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Dennis Ryan",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 134,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Dennis Ryan",
+   "target": "Posse Comitatus",
+   "id": 135,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Dennis Ryan",
+   "target": "Michael Wayne Ryan",
+   "id": 136,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Eastview Klavern 13",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 137,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Ed Fields",
+   "target": "National States Rights Party",
+   "id": 138,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "Ed Fields",
+   "target": "J.B. Stoner",
+   "id": 139,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "Ed Fields",
+   "target": "Wesley Swift",
+   "id": 140,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "Ed Fields",
+   "target": "New Order Knights of the KKK",
+   "id": 141,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Elohim City",
+   "target": "Scott Stedeford",
+   "id": 142,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Emory Burke",
+   "target": "National States Rights Party",
+   "id": 143,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Emory Burke",
+   "target": "Christian Nationalist Crusade",
+   "id": 144,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Eric Rudolph",
+   "target": "Nord Davis",
+   "id": 145,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Eric Rudolph",
+   "target": "Church of Israel",
+   "id": 146,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Eric Rudolph",
+   "target": "Olympic Park & 3 Other Bombings",
+   "id": 147,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Faron Lovelace",
+   "target": "Elohim City",
+   "id": 148,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Faron Lovelace",
+   "target": "Aryan Peoples Republic",
+   "id": 149,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Father Charles Coughlin",
+   "target": "Gerald L.K. Smith",
+   "id": 150,
+   "weight": 1,
+   "decade": 1920
+ },
+ {
+   "source": "Father Charles Coughlin",
+   "target": "Union Party",
+   "id": 151,
+   "weight": 3,
+   "decade": 1930
+ },
+ {
+   "source": "Father Charles Coughlin",
+   "target": "Protocols of the Elders of Zion",
+   "id": 152,
+   "weight": 4,
+   "decade": 1930
+ },
+ {
+   "source": "Frank Silva",
+   "target": "Racketeering Conspiracy",
+   "id": 153,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Frank Silva",
+   "target": "The Order",
+   "id": 154,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "The Order",
+   "id": 155,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "Racketeering Conspiracy",
+   "id": 156,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "Murder of Alan Berg",
+   "id": 157,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "Aryan Nations",
+   "id": 158,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Gary Yarborough",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 159,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "George Joseph King Jr",
+   "target": "California Rangers",
+   "id": 160,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "George Joseph King Jr",
+   "target": "William Potter Gale",
+   "id": 161,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "George Joseph King Jr",
+   "target": "1963 Illegal Arms Sales",
+   "id": 162,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Union Party",
+   "id": 163,
+   "weight": 3,
+   "decade": 1930
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Christian Nationalist Crusade",
+   "id": 164,
+   "weight": 5,
+   "decade": 1940
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Conrad Gaard",
+   "id": 165,
+   "weight": 2,
+   "decade": 1940
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Wesley Swift",
+   "id": 166,
+   "weight": 3,
+   "decade": 1940
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 167,
+   "weight": 1,
+   "decade": 1920
+ },
+ {
+   "source": "Gerald L.K. Smith",
+   "target": "Silver Shirts",
+   "id": 168,
+   "weight": 3,
+   "decade": 1930
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Posse Comitatus",
+   "id": 169,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Richard Wayne Snell",
+   "id": 170,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Neuman Britton",
+   "id": 171,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 172,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Gordon Kahl",
+   "target": "1983 Shootout with FBI",
+   "id": 173,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Henry Ford",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 174,
+   "weight": 5,
+   "decade": 1920
+ },
+ {
+   "source": "Howard Rand",
+   "target": "British Israelism",
+   "id": 175,
+   "weight": 5,
+   "decade": 1920
+ },
+ {
+   "source": "Howard Rand",
+   "target": "Anglo-Saxon Federation of America",
+   "id": 176,
+   "weight": 5,
+   "decade": 1930
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Eastview Klavern 13",
+   "id": 177,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "National States Rights Party",
+   "id": 178,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Tennessee KKK",
+   "id": 179,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Bethel Baptist Church Bombing",
+   "id": 180,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Confederate Underground",
+   "id": 181,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 182,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "J.B. Stoner",
+   "target": "Sam Bowers",
+   "id": 183,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Jack Brown",
+   "target": "J.B. Stoner",
+   "id": 184,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Jack Brown",
+   "target": "Eastview Klavern 13",
+   "id": 185,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Jack Brown",
+   "target": "Wesley Swift",
+   "id": 186,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Jack Mohr",
+   "target": "Christian Patriots Defense League",
+   "id": 187,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Jack Mohr",
+   "target": "Scriptures for America",
+   "id": 188,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "David Duke",
+   "id": 189,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Scriptures for America",
+   "id": 190,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Populist Party",
+   "id": 191,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Church of Israel",
+   "id": 192,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "Dan Gayman",
+   "id": 193,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "James \"Bo\" Gritz",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 194,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "James Forester",
+   "target": "Unity Now",
+   "id": 195,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "James Forester",
+   "target": "Ministry of Christ Church",
+   "id": 196,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "James Haverkamp",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 197,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "James Haverkamp",
+   "target": "Posse Comitatus",
+   "id": 198,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James Haverkamp",
+   "target": "Michael Wayne Ryan",
+   "id": 199,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Christian Defense League",
+   "id": 200,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "National States Rights Party",
+   "id": 201,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James K. Warner",
+   "target": "New Christian Crusade Church",
+   "id": 202,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "David Duke",
+   "id": 203,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Ed Fields",
+   "id": 204,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "J.B. Stoner",
+   "id": 205,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Wesley Swift",
+   "id": 206,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 207,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Louis Beam",
+   "id": 208,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "James K. Warner",
+   "target": "Scriptures for America",
+   "id": 209,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "Wesley Swift",
+   "id": 210,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "National States Rights Party",
+   "id": 211,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "California Rangers",
+   "id": 212,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "James P. Thornton",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 213,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "James Thimm",
+   "target": "Posse Comitatus",
+   "id": 214,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James Thimm",
+   "target": "Michael Wayne Ryan",
+   "id": 215,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "James Venable",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 216,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 217,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "California Knights of the KKK",
+   "id": 218,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "J.B. Stoner",
+   "id": 219,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "James Venable",
+   "target": "Confederate Underground",
+   "id": 220,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "James Venable",
+   "target": "Wesley Swift",
+   "id": 221,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Posse Comitatus",
+   "id": 222,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Aryan Nations",
+   "id": 223,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Dan Gayman",
+   "id": 224,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "Church of Israel",
+   "id": 225,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "James Wickstrom",
+   "target": "American Agricultural Movement",
+   "id": 226,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "America's Promise Ministry",
+   "id": 227,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "1996 Spokane Bank Robbery",
+   "id": 228,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "1996 Spokane Abortion Clinic Bombing",
+   "id": 229,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "1996 Spokane Newspaper Bombing",
+   "id": 230,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Jay Merrell",
+   "target": "Phineas Priesthood",
+   "id": 231,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Jean Craig",
+   "target": "Racketeering Conspiracy",
+   "id": 232,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Jean Craig",
+   "target": "Zillah Craig",
+   "id": 233,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Robert G. Millar",
+   "id": 234,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Dan Gayman",
+   "id": 235,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 236,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Richard Wayne Snell",
+   "id": 237,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Fort Smith sedition trial",
+   "id": 238,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "Elohim City",
+   "id": 239,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Joe Daniel (Danny Joe) Hawkins",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 240,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Joe Daniel (Danny Joe) Hawkins",
+   "target": "Swift Underground",
+   "id": 241,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Joe Daniel (Danny Joe) Hawkins",
+   "target": "National States Rights Party",
+   "id": 242,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "John Crommelin",
+   "target": "National States Rights Party",
+   "id": 243,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "Wesley Swift",
+   "id": 244,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "J.B. Stoner",
+   "id": 245,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 246,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "Sidney Crockett Barnes",
+   "id": 247,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "John Crommelin",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 248,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "John Harrell",
+   "target": "Christian Patriots Defense League",
+   "id": 249,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "John Kasper",
+   "target": "Wesley Swift",
+   "id": 250,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "John Kasper",
+   "target": "J.B. Stoner",
+   "id": 251,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "John Kasper",
+   "target": "National States Rights Party",
+   "id": 252,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "John Kasper",
+   "target": "Tennessee KKK",
+   "id": 253,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "John Shults",
+   "target": "Elohim City",
+   "id": 254,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "John Shults",
+   "target": "Chevie Kehoe",
+   "id": 255,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Shults",
+   "target": "Andreas Strassmeir",
+   "id": 256,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Shults",
+   "target": "Timothy McVeigh",
+   "id": 257,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Militia of Montana",
+   "id": 258,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Aryan Nations",
+   "id": 259,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Randy Weaver",
+   "id": 260,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "Ruby Ridge",
+   "id": 261,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "David Trochmann",
+   "id": 262,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "John Trochmann",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 263,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "National States Rights Party",
+   "id": 264,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "James Venable",
+   "id": 265,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "Wesley Swift",
+   "id": 266,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Joseph Milteer",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 267,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Sam Bowers",
+   "id": 268,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 269,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Sidney Crockett Barnes",
+   "id": 270,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Wesley Swift",
+   "id": 271,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Swift Underground",
+   "id": 272,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Kathy Ainsworth",
+   "target": "Tommy Tarrants",
+   "id": 273,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "Minutemen",
+   "id": 274,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 275,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "Wesley Swift",
+   "id": 276,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Keith Gilbert",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 277,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Ken Loff",
+   "target": "The Order",
+   "id": 278,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Ken Loff",
+   "target": "Racketeering Conspiracy",
+   "id": 279,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Kenneth Goff",
+   "target": "Minutemen",
+   "id": 280,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Kenneth Goff",
+   "target": "Wesley Swift",
+   "id": 281,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 282,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Andreas Strassmeir",
+   "id": 283,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Michael Brescia",
+   "id": 284,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Elohim City",
+   "id": 285,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "1990s Bank Robberies",
+   "id": 286,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Kevin McCarthy",
+   "target": "Mark Thomas",
+   "id": 287,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Kingdom Identity Ministries",
+   "target": "Mike Hallimore",
+   "id": 288,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Kingdom Identity Ministries",
+   "target": "Wesley Swift",
+   "id": 289,
+   "weight": 3,
+   "decade": 2000
+ },
+ {
+   "source": "Kingdom Identity Ministries",
+   "target": "Bertrand Comparet",
+   "id": 290,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Aryan Nations",
+   "id": 291,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "National Alliance",
+   "id": 292,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Institute for Historical Review",
+   "id": 293,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Richard Girnt Butler",
+   "id": 294,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "Louis Beam",
+   "id": 295,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "James Wickstrom",
+   "id": 296,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 297,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Kirk Lyons",
+   "target": "David Tate",
+   "id": 298,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 299,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "J.B. Stoner",
+   "id": 300,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "Sam Bowers",
+   "id": 301,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "Sidney Crockett Barnes",
+   "id": 302,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "L.E. Matthews",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 303,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Larry Pratt",
+   "target": "Gun Owners of America",
+   "id": 304,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Pratt",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 305,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Steven McQuilliams",
+   "target": "Mexican Consulate Shooting Austin TX",
+   "id": 306,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Steven McQuilliams",
+   "target": "Richard Kelly Hoskins",
+   "id": 307,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Larry Steven McQuilliams",
+   "target": "Phineas Priesthood",
+   "id": 308,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Leaderless Resistance",
+   "target": "Pete Peters",
+   "id": 309,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Louis Beam",
+   "target": "United Klans of America (UKA)",
+   "id": 310,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 311,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Fort Smith sedition trial",
+   "id": 312,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Texas Light Infantry Brigade (TLIB)",
+   "id": 313,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Leaderless Resistance",
+   "id": 314,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Louis Beam",
+   "target": "Aryan Nations",
+   "id": 315,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "America's Promise Ministry",
+   "id": 316,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Louis Beam",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 317,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Mark Thomas",
+   "target": "Aryan Nations",
+   "id": 318,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Mark Thomas",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 319,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Mark Thomas",
+   "target": "Richard \"Wild Bill\" Guthrie",
+   "id": 320,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 321,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Timothy McVeigh",
+   "id": 322,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Andreas Strassmeir",
+   "id": 323,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Brescia",
+   "target": "Elohim City",
+   "id": 324,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Fortier",
+   "target": "Oklahoma City Bombing",
+   "id": 325,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Michael Wayne Ryan",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 326,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Michael Wayne Ryan",
+   "target": "Posse Comitatus",
+   "id": 327,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Michael Wayne Ryan",
+   "target": "James Wickstrom",
+   "id": 328,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Mike Beach",
+   "target": "Posse Comitatus",
+   "id": 329,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Mike Beach",
+   "target": "William Dudley Pelley",
+   "id": 330,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Mike Beach",
+   "target": "Silver Shirts",
+   "id": 331,
+   "weight": 3,
+   "decade": 1940
+ },
+ {
+   "source": "Mike Beach",
+   "target": "William Potter Gale",
+   "id": 332,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Mike Hallimore",
+   "target": "David Lane",
+   "id": 333,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Ministry of Christ Church",
+   "target": "Posse Comitatus",
+   "id": 334,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Ministry of Christ Church",
+   "target": "William Potter Gale",
+   "id": 335,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Minutemen",
+   "target": "National States Rights Party",
+   "id": 336,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Minutemen",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 337,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Minutemen",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 338,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Minutemen",
+   "target": "1968 firearms violations, bank robberies",
+   "id": 339,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Montana Freemen",
+   "target": "William Potter Gale",
+   "id": 340,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Montana Freemen",
+   "target": "James Wickstrom",
+   "id": 341,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Montana Freemen",
+   "target": "American Agricultural Movement",
+   "id": 342,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "National Alliance",
+   "target": "Turner Diaries",
+   "id": 344,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "National Knights of the KKK (NKKKK)",
+   "target": "National States Rights Party",
+   "id": 345,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "National States Rights Party",
+   "target": "New Order Knights of the KKK",
+   "id": 346,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 347,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "Wesley Swift",
+   "id": 348,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "James P. Thornton",
+   "id": 349,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "Aryan Nations",
+   "id": 350,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Neuman Britton",
+   "target": "National States Rights Party",
+   "id": 351,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Noah Jefferson (Jeff) Carden",
+   "target": "Wesley Swift",
+   "id": 352,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Noah Jefferson (Jeff) Carden",
+   "target": "White Citizens Council",
+   "id": 353,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Nord Davis",
+   "target": "Northpoint Tactical Teams Compound",
+   "id": 354,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Oren Potito",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 355,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Oren Potito",
+   "target": "National States Rights Party",
+   "id": 356,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Oren Potito",
+   "target": "Wesley Swift",
+   "id": 357,
+   "weight": 2,
+   "decade": 1950
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Church of LaPorte",
+   "id": 358,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Jack Mohr",
+   "id": 359,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Scriptures for America",
+   "id": 360,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Pete Peters",
+   "target": "Ruby Ridge",
+   "id": 361,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Pete Peters",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 362,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 363,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "1990s Bank Robberies",
+   "id": 364,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "Robert Mathews",
+   "id": 365,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Peter Langan",
+   "target": "Richard \"Wild Bill\" Guthrie",
+   "id": 366,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Phineas Priesthood",
+   "target": "Richard Kelly Hoskins",
+   "id": 367,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Phineas Priesthood",
+   "target": "Leaderless Resistance",
+   "id": 368,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Protocols of the Elders of Zion",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 370,
+   "weight": 2,
+   "decade": 1920
+ },
+ {
+   "source": "Protocols of the Elders of Zion",
+   "target": "William J. Cameron",
+   "id": 371,
+   "weight": 4,
+   "decade": 1920
+ },
+ {
+   "source": "Randall Evans",
+   "target": "Racketeering Conspiracy",
+   "id": 372,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Evans",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 373,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Evans",
+   "target": "Racketeering Conspiracy",
+   "id": 374,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Evans",
+   "target": "The Order",
+   "id": 375,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 376,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "Christian Patriots Defense League",
+   "id": 377,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "The Order",
+   "id": 378,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randall Radar",
+   "target": "Jim Ellison",
+   "id": 379,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "The Order",
+   "id": 380,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "Murder of Walter West",
+   "id": 381,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 382,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "Racketeering Conspiracy",
+   "id": 383,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Randolph Duey",
+   "target": "Aryan Nations",
+   "id": 384,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Randy Weaver",
+   "target": "Aryan Nations",
+   "id": 385,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 386,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Arkansas Knights of the KKK",
+   "id": 387,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Timothy McVeigh",
+   "id": 388,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "Aryan Nations",
+   "id": 389,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard \"Wild Bill\" Guthrie",
+   "target": "1990s Bank Robberies",
+   "id": 390,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Bertollini",
+   "target": "Aryan Nations",
+   "id": 391,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Bertollini",
+   "target": "America's Promise Ministry",
+   "id": 392,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Christian Defense League",
+   "id": 393,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 394,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Aryan Nations",
+   "id": 395,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Fort Smith sedition trial",
+   "id": 396,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Wesley Swift",
+   "id": 397,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Debbi Mathews",
+   "id": 398,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Buford Oneal Furrow",
+   "id": 399,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Posse Comitatus",
+   "id": 400,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "America's Promise Ministry",
+   "id": 401,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "National Emancipation of our White Seed",
+   "id": 402,
+   "weight": 1,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "1992 Rocky Mountain Rendezvous at Estes Park CO",
+   "id": 403,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Girnt Butler",
+   "target": "Committee of the States",
+   "id": 404,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kelly Hoskins",
+   "target": "Vigilantes of Christiandom",
+   "id": 405,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "Racketeering Conspiracy",
+   "id": 406,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "The Order",
+   "id": 407,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "Murder of Walter West",
+   "id": 408,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Kemp",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 409,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scott McIntosh",
+   "target": "Phineas Priesthood",
+   "id": 410,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Scott McIntosh",
+   "target": "1992 OK Bank Robberies",
+   "id": 411,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "The Order",
+   "id": 412,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Murder of Alan Berg",
+   "id": 413,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Fort Smith sedition trial",
+   "id": 414,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Racketeering Conspiracy",
+   "id": 415,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Scutari",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 416,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Robert G. Millar",
+   "id": 417,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 418,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Fort Smith sedition trial",
+   "id": 419,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Christian Patriots Defense League",
+   "id": 420,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Elohim City",
+   "id": 421,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "1983 Failed Pipeline Bomb Plot",
+   "id": 422,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Richard Wayne Snell",
+   "target": "Murder of Arkansas State Trooper, Texarkana Pawnshop Murder",
+   "id": 423,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Rick Stice",
+   "target": "Posse Comitatus",
+   "id": 424,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Rick Stice",
+   "target": "Michael Wayne Ryan",
+   "id": 425,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "Eastview Klavern 13",
+   "id": 426,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 427,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "Ed Fields",
+   "id": 428,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Robert \"Dynamite Bob\" Chambliss",
+   "target": "J.B. Stoner",
+   "id": 429,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Robert Bolivar DePugh",
+   "target": "Minutemen",
+   "id": 430,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Robert Bolivar DePugh",
+   "target": "1968 firearms violations, bank robberies",
+   "id": 431,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Unity Now",
+   "id": 432,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Roy Frankhouser",
+   "id": 433,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Fort Smith sedition trial",
+   "id": 434,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "Christian Patriots Defense League",
+   "id": 435,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Robert E. Miles",
+   "target": "1971 School Bus bombings",
+   "id": 436,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert G. Millar",
+   "target": "Elohim City",
+   "id": 437,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Robert G. Millar",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 438,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "National Alliance",
+   "id": 439,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Aryan Nations",
+   "id": 440,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "The Order",
+   "id": 441,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Murder of Alan Berg",
+   "id": 442,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 443,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Turner Diaries",
+   "id": 444,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Mathews",
+   "target": "Zillah Craig",
+   "id": 445,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "Church of LaPorte",
+   "id": 446,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "The Order",
+   "id": 447,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "Racketeering Conspiracy",
+   "id": 448,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert Merki",
+   "target": "1983-84 Armored Car Robberies",
+   "id": 449,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "1996 Spokane Bank Robbery",
+   "id": 450,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "1996 Spokane Abortion Clinic Bombing",
+   "id": 451,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "1996 Spokane Newspaper Bombing",
+   "id": 452,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Robert S. Berry",
+   "target": "Phineas Priesthood",
+   "id": 453,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Roy Frankhouser",
+   "target": "Minutemen",
+   "id": 454,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Roy Frankhouser",
+   "target": "Wesley Swift",
+   "id": 455,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Roy Frankhouser",
+   "target": "Unity Now",
+   "id": 456,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "Ruby Ridge",
+   "target": "James \"Bo\" Gritz",
+   "id": 457,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Ruby Ridge",
+   "target": "Randy Weaver",
+   "id": 458,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "S.J. Capt",
+   "target": "Christian Defense League",
+   "id": 459,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "S.J. Capt",
+   "target": "William Potter Gale",
+   "id": 460,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 461,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Tommy Tarrants",
+   "id": 462,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Wesley Swift",
+   "id": 463,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Congress of Freedom",
+   "id": 464,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 465,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "James Venable",
+   "id": 466,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sam Bowers",
+   "target": "Murder of Vernon Dahmer",
+   "id": 467,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Scott Shepherd",
+   "target": "Sam Bowers",
+   "id": 468,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Scott Shepherd",
+   "target": "J.B. Stoner",
+   "id": 469,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Scott Shepherd",
+   "target": "Tennessee KKK",
+   "id": 470,
+   "weight": 4,
+   "decade": 1990
+ },
+ {
+   "source": "Scott Stedeford",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 471,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Scott Stedeford",
+   "target": "1990s Bank Robberies",
+   "id": 472,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Scriptures for America",
+   "target": "Church of LaPorte",
+   "id": 473,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Sharon Merki",
+   "target": "The Order",
+   "id": 474,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Sharon Merki",
+   "target": "Racketeering Conspiracy",
+   "id": 475,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Sharon Merki",
+   "target": "Church of LaPorte",
+   "id": 476,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Shawn Kenny",
+   "target": "Aryan Republican Army (ARA)",
+   "id": 477,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Sheldon Emry",
+   "target": "Lord's Covenant Church",
+   "id": 478,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sheldon Emry",
+   "target": "Howard Rand",
+   "id": 479,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Sheldon Emry",
+   "target": "America's Promise Ministry",
+   "id": 480,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 481,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "Wesley Swift",
+   "id": 482,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "National States Rights Party",
+   "id": 483,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 484,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Sidney Crockett Barnes",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 485,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Swift Underground",
+   "target": "Wesley Swift",
+   "id": 486,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Swift Underground",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 487,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Swift Underground",
+   "target": "Sam Bowers",
+   "id": 488,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Oklahoma City Bombing",
+   "id": 489,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Waco Siege",
+   "id": 490,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Michael Fortier",
+   "id": 491,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Terry L. Nichols",
+   "target": "Elohim City",
+   "id": 492,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "The Order",
+   "target": "Murder of Alan Berg",
+   "id": 493,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "The Order",
+   "target": "Turner Diaries",
+   "id": 494,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Thomas Robb",
+   "target": "Arkansas Knights of the KKK",
+   "id": 495,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Thomas Robb",
+   "target": "Timothy McVeigh",
+   "id": 496,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Thomas Robb",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 497,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy Haverkamp",
+   "target": "Murders of Luke Stice and James Thimm",
+   "id": 498,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy Haverkamp",
+   "target": "Posse Comitatus",
+   "id": 499,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy Haverkamp",
+   "target": "Michael Wayne Ryan",
+   "id": 500,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Terry L. Nichols",
+   "id": 501,
+   "weight": 4,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "William Luther Pierce",
+   "id": 502,
+   "weight": 1,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Civilian Military Resistance (CMA)",
+   "id": 503,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Oklahoma City Bombing",
+   "id": 504,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Ruby Ridge",
+   "id": 505,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Michael Fortier",
+   "id": 506,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Texas Light Infantry Brigade (TLIB)",
+   "id": 507,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "National Alliance",
+   "id": 508,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Arkansas Knights of the KKK",
+   "id": 509,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Waco Siege",
+   "id": 510,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Timothy McVeigh",
+   "target": "Elohim City",
+   "id": 511,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "Knights of the Ku Klux Klan (KKKK)",
+   "id": 512,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "New Christian Crusade Church",
+   "id": 513,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "California Knights of the KKK",
+   "id": 514,
+   "weight": 4,
+   "decade": 1970
+ },
+ {
+   "source": "Tom Metzger",
+   "target": "Minutemen",
+   "id": 515,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "Tommy Blanton",
+   "target": "1963 Sixteenth Street Baptist Church Bombing",
+   "id": 516,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Blanton",
+   "target": "Eastview Klavern 13",
+   "id": 517,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Blanton",
+   "target": "Ed Fields",
+   "id": 518,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "Wesley Swift",
+   "id": 519,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "id": 520,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "Swift Underground",
+   "id": 521,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "Robert Bolivar DePugh",
+   "id": 522,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "Tommy Tarrants",
+   "target": "L.E. Matthews",
+   "id": 523,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Turner Diaries",
+   "target": "Leaderless Resistance",
+   "id": 524,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "United Klans of America (UKA)",
+   "target": "Unity Now",
+   "id": 525,
+   "weight": 3,
+   "decade": 1970
+ },
+ {
+   "source": "United Klans of America (UKA)",
+   "target": "Eastview Klavern 13",
+   "id": 526,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Vigilantes of Christiandom",
+   "target": "Phineas Priesthood",
+   "id": 527,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Vigilantes of Christiandom",
+   "target": "Leaderless Resistance",
+   "id": 528,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Robert Bolivar DePugh",
+   "id": 529,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Wesley Swift",
+   "id": 530,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Minutemen",
+   "id": 531,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Wally Peyson",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 532,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "Walter Eliyah Thody",
+   "target": "Phineas Priesthood",
+   "id": 533,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Walter Eliyah Thody",
+   "target": "1992 OK Bank Robberies",
+   "id": 534,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "California Anti-Communist League",
+   "id": 535,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 536,
+   "weight": 5,
+   "decade": 1940
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Christian Defense League",
+   "id": 537,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Christian Nationalist Crusade",
+   "id": 538,
+   "weight": 3,
+   "decade": 1950
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "California Rangers",
+   "id": 539,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "Wesley Swift",
+   "target": "Congress of Freedom",
+   "id": 540,
+   "weight": 1,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "National States Rights Party",
+   "id": 541,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "National Knights of the KKK (NKKKK)",
+   "id": 542,
+   "weight": 4,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "1964-1967 MLK Assassination Attempts",
+   "id": 543,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "White Knights of the KKK of Mississippi (WKKKKOM)",
+   "target": "Murder of Vernon Dahmer",
+   "id": 544,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Dudley Pelley",
+   "target": "Silver Shirts",
+   "id": 545,
+   "weight": 5,
+   "decade": 1930
+ },
+ {
+   "source": "William Dudley Pelley",
+   "target": "British Israelism",
+   "id": 546,
+   "weight": 2,
+   "decade": 1930
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "Dearborn Independent/The International Jew",
+   "id": 547,
+   "weight": 4,
+   "decade": 1920
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "Henry Ford",
+   "id": 548,
+   "weight": 5,
+   "decade": 1920
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "Anglo-Saxon Federation of America",
+   "id": 549,
+   "weight": 4,
+   "decade": 1930
+ },
+ {
+   "source": "William J. Cameron",
+   "target": "The Covenant People",
+   "id": 550,
+   "weight": 5,
+   "decade": 1930
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "National Youth Alliance",
+   "id": 551,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "National States Rights Party",
+   "id": 552,
+   "weight": 2,
+   "decade": 1970
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "Turner Diaries",
+   "id": 553,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "William Luther Pierce",
+   "target": "National Alliance",
+   "id": 554,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 555,
+   "weight": 4,
+   "decade": 1950
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Wesley Swift",
+   "id": 556,
+   "weight": 5,
+   "decade": 1950
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "James P. Thornton",
+   "id": 557,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "California Rangers",
+   "id": 558,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Posse Comitatus",
+   "id": 559,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Christian Defense League",
+   "id": 560,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Bob Smith",
+   "id": 561,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "John Crommelin",
+   "id": 562,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Sidney Crockett Barnes",
+   "id": 563,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Noah Jefferson (Jeff) Carden",
+   "id": 564,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "William Potter Gale",
+   "target": "Committee of the States",
+   "id": 565,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 566,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "1983 Beth Shalom Firebombing",
+   "id": 567,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "1983 Failed Pipeline Bomb Plot",
+   "id": 568,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Steven Scott",
+   "target": "Covenant Sword and Arm of the Lord",
+   "id": 569,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Steven Scott",
+   "target": "1983 Failed Pipeline Bomb Plot",
+   "id": 570,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William V. Fowler",
+   "target": "California Knights of the KKK",
+   "id": 571,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "William V. Fowler",
+   "target": "Church of Jesus Christ-Christian",
+   "id": 572,
+   "weight": 3,
+   "decade": 1960
+ },
+ {
+   "source": "William V. Fowler",
+   "target": "Wesley Swift",
+   "id": 573,
+   "weight": 2,
+   "decade": 1960
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Elohim City",
+   "id": 574,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Robert G. Millar",
+   "id": 575,
+   "weight": 2,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Dennis Mahon",
+   "id": 576,
+   "weight": 3,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "Waco Siege",
+   "id": 577,
+   "weight": 1,
+   "decade": 1990
+ },
+ {
+   "source": "Willie Ray Lampley",
+   "target": "November 1995 Bombing Plot",
+   "id": 578,
+   "weight": 5,
+   "decade": 1990
+ },
+ {
+   "source": "Willis Carto",
+   "target": "National Youth Alliance",
+   "id": 579,
+   "weight": 5,
+   "decade": 1960
+ },
+ {
+   "source": "Willis Carto",
+   "target": "Populist Party",
+   "id": 580,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Willis Carto",
+   "target": "James \"Bo\" Gritz",
+   "id": 581,
+   "weight": 3,
+   "decade": 1980
+ },
+ {
+   "source": "Willis Carto",
+   "target": "Institute for Historical Review",
+   "id": 582,
+   "weight": 5,
+   "decade": 1970
+ },
+ {
+   "source": "Zillah Craig",
+   "target": "Church of LaPorte",
+   "id": 583,
+   "weight": 2,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "1983 Beth Shalom Firebombing",
+   "id": 584,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "Jim Ellison",
+   "target": "1983 Metropolitan Community Church Fire",
+   "id": 585,
+   "weight": 5,
+   "decade": 1980
+ },
+ {
+   "source": "William Thomas",
+   "target": "1983 Metropolitan Community Church Fire",
+   "id": 586,
+   "weight": 5,
+   "decade": 1980
+ }
+]
+  };
+
+
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("g")
+    .data(graph.nodes)
+    .enter().append("g")
+
+  var circles = node.append("circle")
+    .attr("r", function(d) { return (5 + d.degree) })
+    .attr("fill", function(d) {
+     if (d.modularity_class == 1) {
+     return "#ff2d00";
+    }
+    else if (d.modularity_class == 2) {
+      return "#5ba300";
+    }
+    else if (d.modularity_class == 3) {
+      return "#f1e526";
+    }
+    else if (d.modularity_class == 4) {
+      return "#f19d26";
+    }
+    else if (d.modularity_class == 5) {
+      return "#2691f1";
+    }
+    else if (d.modularity_class == 6) {
+      return "#6f26f1";
+    }
+    else if (d.modularity_class == 7) {
+      return "#ee26f1";
+    }
+    else if (d.modularity_class == 8) {
+      return "#26f1d6";
+    }
+    else {
+      return "#3c499d";
+    }
+   });
+
+  // Create a drag handler and append it to the node object instead
+  var drag_handler = d3.drag()
+      .on("start", dragstarted)
+      .on("drag", dragged)
+      .on("end", dragended);
+
+  drag_handler(node);
+  
+  var lables = node.append("text")
+      .text(function(d) {
+        return d.id;
+      })
+      .attr('x', 6)
+      .attr('y', 3);
+
+  node.append("title")
+      .text(function(d) { return d.id; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("transform", function(d) {
+          return "translate(" + d.x + "," + d.y + ")";
+        })
+  }
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
+</script>
